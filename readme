@@ -1,0 +1,17 @@
+PROJETO_MANDATO/
+│
+├── main.py                 # Ponto de entrada (inicia o jogo e o loop principal)
+├── engine.py               # Lógica do jogo (verificação de finais, flags e rodadas)
+├── ui.py                   # Funções de desenho (renderização de barras, botões e texto)
+├── constants.py            # Definição de cores, fontes, tamanhos e KPIs iniciais
+│
+├── data/                   # Pasta de dados (Coração do projeto)
+│   └── events.json         # O pool de 75 decisões em formato JSON (fácil de editar)
+│
+├── assets/                 # Arquivos externos
+│   ├── fonts/              # Fontes estilizadas (ex: Courier New, Roboto)
+│   ├── sounds/             # Efeitos sonoros (estática de rádio, clique de botão)
+│   └── icons/              # Ícones das métricas (Povo, Tesouro, etc.)
+│
+└── utils/                  # Scripts auxiliares
+    └── text_handler.py     # Função para quebrar linhas de texto automaticamente

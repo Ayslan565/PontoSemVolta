@@ -1,0 +1,2101 @@
+[
+{
+"id": 1,
+
+"categoria": "Ambiente",
+
+"titulo": "Seca no Nilo",
+
+"texto_crise": "Países vizinhos barraram o rio. Retaliar?",
+
+"sim_pop": 0,
+ "sim_tes": -5,
+ "sim_con": 0,
+ "sim_for": 18,
+ "sim_jud": 0,
+ "sim_dip": -25,
+ "sim_esq": -4,
+ "sim_dir": 12,
+
+"nao_pop": -14,
+ "nao_tes": 0,
+ "nao_con": -6,
+ "nao_for": -10,
+ "nao_jud": 0,
+ "nao_dip": 15,
+ "nao_esq": 8,
+ "nao_dir": -5
+},
+
+{
+"id": 2,
+
+"categoria": "Ambiente",
+
+"titulo": "Lítio Nacional",
+
+"texto_crise": "Nacionalizar minas de Lítio (quebra de contrato).",
+
+"sim_pop": 6,
+ "sim_tes": 22,
+ "sim_con": 4,
+ "sim_for": 0,
+ "sim_jud": -8,
+ "sim_dip": -30,
+ "sim_esq": 25,
+ "sim_dir": -18,
+
+"nao_pop": 0,
+ "nao_tes": -10,
+ "nao_con": 0,
+ "nao_for": 0,
+ "nao_jud": 5,
+ "nao_dip": 18,
+ "nao_esq": -15,
+ "nao_dir": 10
+},
+
+{
+"id": 3,
+
+"categoria": "Ambiente",
+
+"titulo": "Foz do Amazonas",
+
+"texto_crise": "Autorizar perfuração de petróleo na foz.",
+
+"sim_pop": 0,
+ "sim_tes": 30,
+ "sim_con": 12,
+ "sim_for": 5,
+ "sim_jud": -14,
+ "sim_dip": -22,
+ "sim_esq": -20,
+ "sim_dir": 18,
+
+"nao_pop": 4,
+ "nao_tes": -15,
+ "nao_con": -8,
+ "nao_for": 0,
+ "nao_jud": 8,
+ "nao_dip": 12,
+ "nao_esq": 15,
+ "nao_dir": -10
+},
+
+{
+"id": 4,
+
+"categoria": "Ambiente",
+
+"titulo": "Agrotóxicos",
+
+"texto_crise": "Liberar químicos banidos na Europa.",
+
+"sim_pop": -18,
+ "sim_tes": 8,
+ "sim_con": 15,
+ "sim_for": 0,
+ "sim_jud": 0,
+ "sim_dip": -12,
+ "sim_esq": -15,
+ "sim_dir": 20,
+
+"nao_pop": 5,
+ "nao_tes": -5,
+ "nao_con": -18,
+ "nao_for": 0,
+ "nao_jud": 0,
+ "nao_dip": 10,
+ "nao_esq": 12,
+ "nao_dir": -15
+},
+
+{
+"id": 5,
+
+"categoria": "Ambiente",
+
+"titulo": "Terras indígenas",
+
+"texto_crise": "Abrir reservas para mineração industrial.",
+
+"sim_pop": -8,
+ "sim_tes": 18,
+ "sim_con": 14,
+ "sim_for": 0,
+ "sim_jud": -22,
+ "sim_dip": -25,
+ "sim_esq": -30,
+ "sim_dir": 22,
+
+"nao_pop": 10,
+ "nao_tes": -12,
+ "nao_con": -12,
+ "nao_for": 0,
+ "nao_jud": 15,
+ "nao_dip": 18,
+ "nao_esq": 25,
+ "nao_dir": -18
+},
+
+{
+"id": 6,
+
+"categoria": "Ambiente",
+
+"titulo": "Mercado de Carbono",
+
+"texto_crise": "Taxar pesadamente indústrias poluentes",
+
+"sim_pop": 5,
+ "sim_tes": -12,
+ "sim_con": -15,
+ "sim_for": 0,
+ "sim_jud": 4,
+ "sim_dip": 20,
+ "sim_esq": 25,
+ "sim_dir": -22,
+
+"nao_pop": -5,
+ "nao_tes": 10,
+ "nao_con": 15,
+ "nao_for": 0,
+ "nao_jud": -5,
+ "nao_dip": -18,
+ "nao_esq": -18,
+ "nao_dir": 18
+},
+
+{
+"id": 7,
+
+"categoria": "Ambiente",
+
+"titulo": "Privatização Águas",
+
+"texto_crise": "Entregar saneamento básico ao setor privado.",
+
+"sim_pop": -15,
+ "sim_tes": 20,
+ "sim_con": 8,
+ "sim_for": 0,
+ "sim_jud": 0,
+ "sim_dip": 5,
+ "sim_esq": -25,
+ "sim_dir": 25,
+
+"nao_pop": 18,
+ "nao_tes": -15,
+ "nao_con": -10,
+ "nao_for": 0,
+ "nao_jud": 0,
+ "nao_dip": -5,
+ "nao_esq": 22,
+ "nao_dir": -20
+},
+
+{
+"id": 8,
+
+"categoria": "Ambiente",
+
+"titulo": "Energia Nuclear",
+
+"texto_crise": "Construir usina em área de preservação.",
+
+"sim_pop": -10,
+ "sim_tes": 15,
+ "sim_con": 6,
+ "sim_for": 20,
+ "sim_jud": -5,
+ "sim_dip": -12,
+ "sim_esq": -20,
+ "sim_dir": 8,
+
+"nao_pop": 5,
+ "nao_tes": -10,
+ "nao_con": -5,
+ "nao_for": -15,
+ "nao_jud": 5,
+ "nao_dip": 8,
+ "nao_esq": 15,
+ "nao_dir": -5
+},
+
+{
+"id": 9,
+
+"categoria": "Ambiente",
+
+"titulo": "Queimadas",
+
+"texto_crise": "Anistiar multas ambientais do agronegócio",
+
+"sim_pop": -12,
+ "sim_tes": -15,
+ "sim_con": 25,
+ "sim_for": 0,
+ "sim_jud": -10,
+ "sim_dip": -28,
+ "sim_esq": -25,
+ "sim_dir": 30,
+
+"nao_pop": 8,
+ "nao_tes": 12,
+ "nao_con": -25,
+ "nao_for": 0,
+ "nao_jud": 15,
+ "nao_dip": 20,
+ "nao_esq": 20,
+ "nao_dir": -22
+},
+
+{
+"id": 10,
+
+"categoria": "Ambiente",
+
+"titulo": "Pesca Industrial",
+
+"texto_crise": "Liberar pesca em santuários marinhos.",
+
+"sim_pop": -8,
+ "sim_tes": 14,
+ "sim_con": 10,
+ "sim_for": 0,
+ "sim_jud": -4,
+ "sim_dip": -25,
+ "sim_esq": -15,
+ "sim_dir": 18,
+
+"nao_pop": 5,
+ "nao_tes": -8,
+ "nao_con": -10,
+ "nao_for": 0,
+ "nao_jud": 4,
+ "nao_dip": 12,
+ "nao_esq": 12,
+ "nao_dir": -12
+},
+
+{
+"id": 11,
+
+"categoria": "Ambiente",
+
+"titulo": "Cota de Reciclagem",
+
+"texto_crise": "Obrigar empresas a recolher 100% do plástico",
+
+"sim_pop": 12,
+ "sim_tes": -14,
+ "sim_con": -18,
+ "sim_for": 0,
+ "sim_jud": 5,
+ "sim_dip": 15,
+ "sim_esq": 18,
+ "sim_dir": -20,
+
+"nao_pop": -8,
+ "nao_tes": 10,
+ "nao_con": 12,
+ "nao_for": 0,
+ "nao_jud": -5,
+ "nao_dip": -12,
+ "nao_esq": -12,
+ "nao_dir": 15
+},
+
+{
+"id": 12,
+
+"categoria": "Ambiente",
+
+"titulo": " Transposição Rio",
+
+"texto_crise": "Obra bilionária desviando rios p/ o agro",
+
+"sim_pop": 15,
+ "sim_tes": -25,
+ "sim_con": 10,
+ "sim_for": 0,
+ "sim_jud": -8,
+ "sim_dip": -5,
+ "sim_esq": -15,
+ "sim_dir": 18,
+
+"nao_pop": -12,
+ "nao_tes": 15,
+ "nao_con": -12,
+ "nao_for": 0,
+ "nao_jud": 5,
+ "nao_dip": 5,
+ "nao_esq": 18,
+ "nao_dir": -15
+},
+
+{
+"id": 13,
+
+"categoria": "Ambiente",
+
+"titulo": "Importação Lixo",
+
+"texto_crise": "Receber lixo tecnológico p/ processamento.",
+
+"sim_pop": -25,
+ "sim_tes": 18,
+ "sim_con": 5,
+ "sim_for": 0,
+ "sim_jud": 0,
+ "sim_dip": -15,
+ "sim_esq": -12,
+ "sim_dir": 10,
+
+"nao_pop": 15,
+ "nao_tes": -10,
+ "nao_con": -5,
+ "nao_for": 0,
+ "nao_jud": 0,
+ "nao_dip": 12,
+ "nao_esq": 8,
+ "nao_dir": -8
+},
+
+{
+"id": 14,
+
+"categoria": "Ambiente",
+
+"titulo": "Fertilizantes",
+
+"texto_crise": "Subsidiar adubos químicos com verba da saúde.",
+
+"sim_pop": -20,
+ "sim_tes": -5,
+ "sim_con": 22,
+ "sim_for": 0,
+ "sim_jud": -4,
+ "sim_dip": 0,
+ "sim_esq": -18,
+ "sim_dir": 25,
+
+"nao_pop": 18,
+ "nao_tes": 5,
+ "nao_con": -20,
+ "nao_for": 0,
+ "nao_jud": 0,
+ "nao_dip": 0,
+ "nao_esq": 15,
+ "nao_dir": -18
+},
+
+{
+"id": 15,
+
+"categoria": "Ambiente",
+
+"titulo": "Hidrelétricas",
+
+"texto_crise": "Inundar vilarejos para nova represa",
+
+"sim_pop": -22,
+ "sim_tes": 18,
+ "sim_con": 12,
+ "sim_for": 15,
+ "sim_jud": -10,
+ "sim_dip": 0,
+ "sim_esq": -25,
+ "sim_dir": 14,
+
+"nao_pop": 15,
+ "nao_tes": -12,
+ "nao_con": -10,
+ "nao_for": -12,
+ "nao_jud": 8,
+ "nao_dip": 0,
+ "nao_esq": 18,
+ "nao_dir": -12
+},
+
+{
+"id": 16,
+
+"categoria": "Economia",
+
+"titulo": "Imposto Riqueza",
+
+"texto_crise": "Taxar fortunas acima de R$ 50 mi.",
+
+"sim_pop": 12,
+ "sim_tes": 15,
+ "sim_con": -15,
+ "sim_for": 0,
+ "sim_jud": 0,
+ "sim_dip": -5,
+ "sim_esq": 30,
+ "sim_dir": -35,
+
+"nao_pop": -10,
+ "nao_tes": -12,
+ "nao_con": 15,
+ "nao_for": 0,
+ "nao_jud": 0,
+ "nao_dip": 5,
+ "nao_esq": -25,
+ "nao_dir": 25
+},
+
+{
+"id": 17,
+
+"categoria": "Economia",
+
+"titulo": "IA nos Bancos",
+
+"texto_crise": "Permitir demissão em massa por automação",
+
+"sim_pop": -35,
+ "sim_tes": 12,
+ "sim_con": 5,
+ "sim_for": 0,
+ "sim_jud": 0,
+ "sim_dip": 4,
+ "sim_esq": -25,
+ "sim_dir": 18,
+
+"nao_pop": 20,
+ "nao_tes": -8,
+ "nao_con": -5,
+ "nao_for": 0,
+ "nao_jud": 0,
+ "nao_dip": -4,
+ "nao_esq": 20,
+ "nao_dir": -14
+},
+
+{
+"id": 18,
+
+"categoria": "Economia",
+
+"titulo": "Renda Básica",
+
+"texto_crise": "Criar auxílio para desempregados pela IA.",
+
+"sim_pop": 35,
+ "sim_tes": -40,
+ "sim_con": -12,
+ "sim_for": 0,
+ "sim_jud": 0,
+ "sim_dip": 10,
+ "sim_esq": 25,
+ "sim_dir": -20,
+
+"nao_pop": -30,
+ "nao_tes": 25,
+ "nao_con": 15,
+ "nao_for": 0,
+ "nao_jud": 0,
+ "nao_dip": -10,
+ "nao_esq": -22,
+ "nao_dir": 18
+},
+
+{
+"id": 19,
+
+"categoria": "Economia",
+
+"titulo": "Taxa Big Tech",
+
+"texto_crise": "Criar imposto sobre lucros de Google/Meta.",
+
+"sim_pop": 8,
+ "sim_tes": 18,
+ "sim_con": -6,
+ "sim_for": 0,
+ "sim_jud": 5,
+ "sim_dip": -25,
+ "sim_esq": 22,
+ "sim_dir": -10,
+
+"nao_pop": -4,
+ "nao_tes": -12,
+ "nao_con": 8,
+ "nao_for": 0,
+ "nao_jud": -4,
+ "nao_dip": 15,
+ "nao_esq": -18,
+ "nao_dir": 15
+},
+
+{
+"id": 20,
+
+"categoria": "Economia",
+
+"titulo": "Cripto Estatal",
+
+"texto_crise": "Banir Bitcoin e criar moeda digital do governo",
+
+"sim_pop": -15,
+ "sim_tes": 10,
+ "sim_con": 5,
+ "sim_for": 15,
+ "sim_jud": -12,
+ "sim_dip": -8,
+ "sim_esq": 5,
+ "sim_dir": -22,
+
+"nao_pop": 8,
+ "nao_tes": -5,
+ "nao_con": 0,
+ "nao_for": -10,
+ "nao_jud": 10,
+ "nao_dip": 5,
+ "nao_esq": -5,
+ "nao_dir": 15
+},
+
+{
+"id": 21,
+
+"categoria": "Economia",
+
+"titulo": "Soberania Dados",
+
+"texto_crise": "Exigir servidores nacionais para apps.",
+
+"sim_pop": 4,
+ "sim_tes": -18,
+ "sim_con": -5,
+ "sim_for": 22,
+ "sim_jud": 6,
+ "sim_dip": -12,
+ "sim_esq": 15,
+ "sim_dir": -15,
+
+"nao_pop": -4,
+ "nao_tes": 12,
+ "nao_con": 8,
+ "nao_for": -18,
+ "nao_jud": -4,
+ "nao_dip": 8,
+ "nao_esq": -12,
+ "nao_dir": 12
+},
+
+{
+"id": 22,
+
+"categoria": "Economia",
+
+"titulo": "Teto de Gastos",
+
+"texto_crise": "Cortar 20% da educação para pagar dívida.",
+
+"sim_pop": -35,
+ "sim_tes": 30,
+ "sim_con": 18,
+ "sim_for": 0,
+ "sim_jud": 4,
+ "sim_dip": 15,
+ "sim_esq": -30,
+ "sim_dir": 25,
+
+"nao_pop": 25,
+ "nao_tes": -25,
+ "nao_con": -22,
+ "nao_for": 0,
+ "nao_jud": -4,
+ "nao_dip": -18,
+ "nao_esq": 25,
+ "nao_dir": -30
+},
+
+{
+"id": 23,
+
+"categoria": "Economia",
+
+"titulo": "Estatização",
+
+"texto_crise": "Reestatizar a malha ferroviária",
+
+"sim_pop": 10,
+ "sim_tes": -35,
+ "sim_con": -15,
+ "sim_for": 12,
+ "sim_jud": -6,
+ "sim_dip": -10,
+ "sim_esq": 30,
+ "sim_dir": -25,
+
+"nao_pop": -6,
+ "nao_tes": 15,
+ "nao_con": 18,
+ "nao_for": -8,
+ "nao_jud": 4,
+ "nao_dip": 12,
+ "nao_esq": -20,
+ "nao_dir": 25
+},
+
+{
+"id": 24,
+
+"categoria": "Economia",
+
+"titulo": "Juros Baixos",
+
+"texto_crise": "Intervir no BC para baixar juros na marra.",
+
+"sim_pop": 22,
+ "sim_tes": -5,
+ "sim_con": -12,
+ "sim_for": 0,
+ "sim_jud": -10,
+ "sim_dip": -35,
+ "sim_esq": 15,
+ "sim_dir": -30,
+
+"nao_pop": -18,
+ "nao_tes": 10,
+ "nao_con": 15,
+ "nao_for": 0,
+ "nao_jud": 12,
+ "nao_dip": 25,
+ "nao_esq": -12,
+ "nao_dir": 25
+},
+
+{
+"id": 25,
+
+"categoria": "Economia",
+
+"titulo": "Fundo de Chips",
+
+"texto_crise": "R$ 10 bi para fábrica nacional de semicondutores.",
+
+"sim_pop": 5,
+ "sim_tes": -20,
+ "sim_con": 8,
+ "sim_for": 15,
+ "sim_jud": 0,
+ "sim_dip": 12,
+ "sim_esq": 10,
+ "sim_dir": -5,
+
+"nao_pop": -3,
+ "nao_tes": 15,
+ "nao_con": -10,
+ "nao_for": -15,
+ "nao_jud": 0,
+ "nao_dip": -12,
+ "nao_esq": -8,
+ "nao_dir": 8
+},
+
+{
+"id": 26,
+
+"categoria": "Economia",
+
+"titulo": "Privatizar Correios",
+
+"texto_crise": "Vender a estatal para grupo logístico global.",
+
+"sim_pop": -12,
+ "sim_tes": 18,
+ "sim_con": 15,
+ "sim_for": 0,
+ "sim_jud": 0,
+ "sim_dip": 8,
+ "sim_esq": -30,
+ "sim_dir": 35,
+
+"nao_pop": 8,
+ "nao_tes": -12,
+ "nao_con": -12,
+ "nao_for": 0,
+ "nao_jud": 0,
+ "nao_dip": -4,
+ "nao_esq": 25,
+ "nao_dir": -25
+},
+
+{
+"id": 27,
+
+"categoria": "Economia",
+
+"titulo": "Uberização",
+
+"texto_crise": "Reconhecer vínculo empregatício de apps",
+
+"sim_pop": 10,
+ "sim_tes": -15,
+ "sim_con": -12,
+ "sim_for": 0,
+ "sim_jud": 8,
+ "sim_dip": 0,
+ "sim_esq": 28,
+ "sim_dir": -22,
+
+"nao_pop": -10,
+ "nao_tes": 12,
+ "nao_con": 14,
+ "nao_for": 0,
+ "nao_jud": -6,
+ "nao_dip": 0,
+ "nao_esq": -20,
+ "nao_dir": 20
+},
+
+{
+"id": 28,
+
+"categoria": "Economia",
+
+"titulo": "Dívida Auditoria",
+
+"texto_crise": "Suspender pagamentos para auditar a dívida",
+
+"sim_pop": 15,
+ "sim_tes": -30,
+ "sim_con": -18,
+ "sim_for": 0,
+ "sim_jud": -5,
+ "sim_dip": -45,
+ "sim_esq": 35,
+ "sim_dir": -30,
+
+"nao_pop": -12,
+ "nao_tes": 25,
+ "nao_con": 20,
+ "nao_for": 0,
+ "nao_jud": 4,
+ "nao_dip": 30,
+ "nao_esq": -25,
+ "nao_dir": 22
+},
+
+{
+"id": 29,
+
+"categoria": "Economia",
+
+"titulo": "Home Office",
+
+"texto_crise": "Isenção fiscal para empresas 100% remotas.",
+
+"sim_pop": 18,
+ "sim_tes": -14,
+ "sim_con": -8,
+ "sim_for": 0,
+ "sim_jud": 0,
+ "sim_dip": 4,
+ "sim_esq": 15,
+ "sim_dir": -5,
+
+"nao_pop": -12,
+ "nao_tes": 10,
+ "nao_con": 6,
+ "nao_for": 0,
+ "nao_jud": 0,
+ "nao_dip": -2,
+ "nao_esq": -10,
+ "nao_dir": 12
+},
+
+{
+"id": 30,
+
+"categoria": "Economia",
+
+"titulo": "Reforma Tributária",
+
+"texto_crise": "Unificar impostos (beneficia indústria).",
+
+"sim_pop": 5,
+ "sim_tes": 25,
+ "sim_con": 28,
+ "sim_for": 0,
+ "sim_jud": -10,
+ "sim_dip": 8,
+ "sim_esq": -18,
+ "sim_dir": 22,
+
+"nao_pop": -4,
+ "nao_tes": -15,
+ "nao_con": -25,
+ "nao_for": 0,
+ "nao_jud": 5,
+ "nao_dip": -5,
+ "nao_esq": 12,
+ "nao_dir": -15
+},
+
+{
+"id": 31,
+
+"categoria": "Institucional",
+
+"titulo": "Emendas Secretas",
+
+"texto_crise": "Liberar verbas para o Congresso não cair.",
+
+"sim_pop": -15,
+ "sim_tes": -20,
+ "sim_con": 45,
+ "sim_for": 0,
+ "sim_jud": -25,
+ "sim_dip": 0,
+ "sim_esq": -18,
+ "sim_dir": 15,
+
+"nao_pop": 10,
+ "nao_tes": 15,
+ "nao_con": -50,
+ "nao_for": 0,
+ "nao_jud": 18,
+ "nao_dip": 0,
+ "nao_esq": 15,
+ "nao_dir": -12
+},
+
+{
+"id": 32,
+
+"categoria": "Institucional",
+
+"titulo": "Juíz Aliado",
+
+"texto_crise": "Nomear um amigo íntimo para o STF",
+
+"sim_pop": -10,
+ "sim_tes": 0,
+ "sim_con": 15,
+ "sim_for": 0,
+ "sim_jud": -35,
+ "sim_dip": 0,
+ "sim_esq": -5,
+ "sim_dir": 12,
+
+"nao_pop": 5,
+ "nao_tes": 0,
+ "nao_con": -12,
+ "nao_for": 0,
+ "nao_jud": 25,
+ "nao_dip": 0,
+ "nao_esq": 8,
+ "nao_dir": -8
+},
+
+{
+"id": 33,
+
+"categoria": "Institucional",
+
+"titulo": "Corte Privilégios",
+
+"texto_crise": "Acabar com supersalários de juízes.",
+
+"sim_pop": 40,
+ "sim_tes": 12,
+ "sim_con": 5,
+ "sim_for": 0,
+ "sim_jud": -50,
+ "sim_dip": 0,
+ "sim_esq": 20,
+ "sim_dir": 5,
+
+"nao_pop": -35,
+ "nao_tes": -8,
+ "nao_con": 0,
+ "nao_for": 0,
+ "nao_jud": 35,
+ "nao_dip": 0,
+ "nao_esq": -15,
+ "nao_dir": -5
+},
+
+{
+"id": 34,
+
+"categoria": "Institucional",
+
+"titulo": "Anistia",
+
+"texto_crise": "Perdoar aliados presos por atos radicais.",
+
+"sim_pop": -18,
+ "sim_tes": 0,
+ "sim_con": 25,
+ "sim_for": 10,
+ "sim_jud": -45,
+ "sim_dip": -15,
+ "sim_esq": -30,
+ "sim_dir": 35,
+
+"nao_pop": 12,
+ "nao_tes": 0,
+ "nao_con": -20,
+ "nao_for": -10,
+ "nao_jud": 30,
+ "nao_dip": 12,
+ "nao_esq": 25,
+ "nao_dir": -30
+},
+
+{
+"id": 35,
+
+"categoria": "Institucional",
+
+"titulo": "Controle Redes",
+
+"texto_crise": "Lei para punir perfis que atacam o governo.",
+
+"sim_pop": -22,
+ "sim_tes": 0,
+ "sim_con": 12,
+ "sim_for": 5,
+ "sim_jud": -18,
+ "sim_dip": -12,
+ "sim_esq": 15,
+ "sim_dir": -25,
+
+"nao_pop": 15,
+ "nao_tes": 0,
+ "nao_con": -10,
+ "nao_for": -4,
+ "nao_jud": 14,
+ "nao_dip": 10,
+ "nao_esq": -15,
+ "nao_dir": 18
+},
+
+{
+"id": 36,
+
+"categoria": "Institucional",
+
+"titulo": "Voto Impresso",
+
+"texto_crise": "Mudar sistema eleitoral contra o Judiciário",
+
+"sim_pop": 8,
+ "sim_tes": -12,
+ "sim_con": 10,
+ "sim_for": 5,
+ "sim_jud": -30,
+ "sim_dip": -15,
+ "sim_esq": -25,
+ "sim_dir": 35,
+
+"nao_pop": -5,
+ "nao_tes": 10,
+ "nao_con": -8,
+ "nao_for": -4,
+ "nao_jud": 22,
+ "nao_dip": 12,
+ "nao_esq": 20,
+ "nao_dir": -22
+},
+
+{
+"id": 37,
+
+"categoria": "Institucional",
+
+"titulo": "Mandato STF",
+
+"texto_crise": "Limitar juízes a apenas 8 anos de cargo.",
+
+"sim_pop": 20,
+ "sim_tes": 0,
+ "sim_con": 35,
+ "sim_for": 4,
+ "sim_jud": -45,
+ "sim_dip": 0,
+ "sim_esq": 5,
+ "sim_dir": 18,
+
+"nao_pop": -15,
+ "nao_tes": 0,
+ "nao_con": -30,
+ "nao_for": -2,
+ "nao_jud": 40,
+ "nao_dip": 0,
+ "nao_esq": -4,
+ "nao_dir": -15
+},
+
+{
+"id": 38,
+
+"categoria": "Institucional",
+
+"titulo": "Aumento Judiciário",
+
+"texto_crise": "Dar 20% de aumento p/ evitar greve no STF.",
+
+"sim_pop": -35,
+ "sim_tes": -15,
+ "sim_con": -10,
+ "sim_for": 0,
+ "sim_jud": 45,
+ "sim_dip": 0,
+ "sim_esq": -12,
+ "sim_dir": -5,
+
+"nao_pop": 25,
+ "nao_tes": 10,
+ "nao_con": 8,
+ "nao_for": 0,
+ "nao_jud": -35,
+ "nao_dip": 0,
+ "nao_esq": 10,
+ "nao_dir": 8
+},
+
+{
+"id": 39,
+
+"categoria": "Institucional",
+
+"titulo": "Banir Partidos",
+
+"texto_crise": "Proibir siglas de extremadireita/esquerda.",
+
+"sim_pop": -10,
+ "sim_tes": 0,
+ "sim_con": -15,
+ "sim_for": 25,
+ "sim_jud": 30,
+ "sim_dip": -10,
+ "sim_esq": -25,
+ "sim_dir": -25,
+
+"nao_pop": 12,
+ "nao_tes": 0,
+ "nao_con": 12,
+ "nao_for": -15,
+ "nao_jud": -22,
+ "nao_dip": 5,
+ "nao_esq": 18,
+ "nao_dir": 18
+},
+
+{
+"id": 40,
+
+"categoria": "Institucional",
+
+"titulo": "Veto Total",
+
+"texto_crise": "Vetar lei do Congresso que aumenta gastos.",
+
+"sim_pop": -8,
+ "sim_tes": 25,
+ "sim_con": -40,
+ "sim_for": 0,
+ "sim_jud": 15,
+ "sim_dip": 8,
+ "sim_esq": -12,
+ "sim_dir": 8,
+
+"nao_pop": 10,
+ "nao_tes": -22,
+ "nao_con": 35,
+ "nao_for": 0,
+ "nao_jud": -12,
+ "nao_dip": -5,
+ "nao_esq": 10,
+ "nao_dir": -8
+},
+
+{
+"id": 41,
+
+"categoria": "Institucional",
+
+"titulo": "Intervenção",
+
+"texto_crise": " Tomar governo de estado opositor por decreto.",
+
+"sim_pop": -15,
+ "sim_tes": -5,
+ "sim_con": -45,
+ "sim_for": 35,
+ "sim_jud": -40,
+ "sim_dip": -20,
+ "sim_esq": -12,
+ "sim_dir": -12,
+
+"nao_pop": 12,
+ "nao_tes": 5,
+ "nao_con": 30,
+ "nao_for": -35,
+ "nao_jud": 25,
+ "nao_dip": 12,
+ "nao_esq": 8,
+ "nao_dir": 8
+},
+
+{
+"id": 42,
+
+"categoria": "Institucional",
+
+"titulo": "Cotas Gestão",
+
+"texto_crise": "50% de cargos no governo p/ minorias.",
+
+"sim_pop": 8,
+ "sim_tes": 0,
+ "sim_con": -12,
+ "sim_for": -8,
+ "sim_jud": 5,
+ "sim_dip": 5,
+ "sim_esq": 25,
+ "sim_dir": -25,
+
+"nao_pop": -5,
+ "nao_tes": 0,
+ "nao_con": 10,
+ "nao_for": 5,
+ "nao_jud": -4,
+ "nao_dip": -2,
+ "nao_esq": -20,
+ "nao_dir": 20
+},
+
+{
+"id": 43,
+
+"categoria": "Institucional",
+
+"titulo": "Caixa Militar",
+
+"texto_crise": "Abrir sigilo de gastos das Forças Armadas.",
+
+"sim_pop": 25,
+ "sim_tes": 10,
+ "sim_con": 12,
+ "sim_for": -50,
+ "sim_jud": 18,
+ "sim_dip": 0,
+ "sim_esq": 15,
+ "sim_dir": -5,
+
+"nao_pop": -18,
+ "nao_tes": -5,
+ "nao_con": -10,
+ "nao_for": 35,
+ "nao_jud": -12,
+ "nao_dip": 0,
+ "nao_esq": -12,
+ "nao_dir": 8
+},
+
+{
+"id": 44,
+
+"categoria": "Institucional",
+
+"titulo": "Escolas s/ Partido",
+
+"texto_crise": "Mudar currículo p/ valores conservadores",
+
+"sim_pop": -12,
+ "sim_tes": 0,
+ "sim_con": 8,
+ "sim_for": 5,
+ "sim_jud": -10,
+ "sim_dip": 0,
+ "sim_esq": -28,
+ "sim_dir": 28,
+
+"nao_pop": 8,
+ "nao_tes": 0,
+ "nao_con": -5,
+ "nao_for": -4,
+ "nao_jud": 8,
+ "nao_dip": 0,
+ "nao_esq": 22,
+ "nao_dir": -22
+},
+
+{
+"id": 45,
+
+"categoria": "Institucional",
+
+"titulo": "Parlamentarismo",
+
+"texto_crise": "Transferir seu poder para um Primeiro-Ministro",
+
+"sim_pop": -40,
+ "sim_tes": -5,
+ "sim_con": 50,
+ "sim_for": -15,
+ "sim_jud": 15,
+ "sim_dip": 12,
+ "sim_esq": 0,
+ "sim_dir": 0,
+
+"nao_pop": 30,
+ "nao_tes": 5,
+ "nao_con": -45,
+ "nao_for": 15,
+ "nao_jud": -10,
+ "nao_dip": -8,
+ "nao_esq": 0,
+ "nao_dir": 0
+},
+
+{
+"id": 46,
+
+"categoria": "Segurança",
+
+"titulo": "Armas p/ todos",
+
+"texto_crise": "Liberar fuzis p/ cidadãos comuns.",
+
+"sim_pop": 10,
+ "sim_tes": 5,
+ "sim_con": 8,
+ "sim_for": 35,
+ "sim_jud": -18,
+ "sim_dip": -12,
+ "sim_esq": -40,
+ "sim_dir": 35,
+
+"nao_pop": -8,
+ "nao_tes": -4,
+ "nao_con": -6,
+ "nao_for": -30,
+ "nao_jud": 15,
+ "nao_dip": 10,
+ "nao_esq": 30,
+ "nao_dir": -25
+},
+
+{
+"id": 47,
+
+"categoria": "Segurança",
+
+"titulo": "Desmilitarizar",
+
+"texto_crise": "Acabar com a Polícia Militar.",
+
+"sim_pop": 15,
+ "sim_tes": -8,
+ "sim_con": -15,
+ "sim_for": -50,
+ "sim_jud": 10,
+ "sim_dip": 5,
+ "sim_esq": 40,
+ "sim_dir": -35,
+
+"nao_pop": -18,
+ "nao_tes": 10,
+ "nao_con": 12,
+ "nao_for": 35,
+ "nao_jud": -8,
+ "nao_dip": -4,
+ "nao_esq": -30,
+ "nao_dir": 30
+},
+
+{
+"id": 48,
+
+"categoria": "Segurança",
+
+"titulo": "Legalização",
+
+"texto_crise": "Liberar e taxar a Cannabis",
+
+"sim_pop": 20,
+ "sim_tes": 25,
+ "sim_con": -12,
+ "sim_for": -25,
+ "sim_jud": -15,
+ "sim_dip": 5,
+ "sim_esq": 30,
+ "sim_dir": -28,
+
+"nao_pop": -15,
+ "nao_tes": -18,
+ "nao_con": 10,
+ "nao_for": 20,
+ "nao_jud": 12,
+ "nao_dip": -4,
+ "nao_esq": -25,
+ "nao_dir": 25
+},
+
+{
+"id": 49,
+
+"categoria": "Segurança",
+
+"titulo": "Maioridade 16",
+
+"texto_crise": "Prender menores em presídios comuns.",
+
+"sim_pop": 25,
+ "sim_tes": -10,
+ "sim_con": 15,
+ "sim_for": 12,
+ "sim_jud": -22,
+ "sim_dip": -10,
+ "sim_esq": -30,
+ "sim_dir": 30,
+
+"nao_pop": -20,
+ "nao_tes": 8,
+ "nao_con": -12,
+ "nao_for": -10,
+ "nao_jud": 18,
+ "nao_dip": 8,
+ "nao_esq": 25,
+ "nao_dir": -22
+},
+
+{
+"id": 50,
+
+"categoria": "Segurança",
+
+"titulo": "Câmeras Farda",
+
+"texto_crise": "Obrigar câmeras em todos os policiais.",
+
+"sim_pop": 22,
+ "sim_tes": -12,
+ "sim_con": 5,
+ "sim_for": -35,
+ "sim_jud": 15,
+ "sim_dip": 8,
+ "sim_esq": 30,
+ "sim_dir": -15,
+
+"nao_pop": -15,
+ "nao_tes": 8,
+ "nao_con": -4,
+ "nao_for": 30,
+ "nao_jud": -12,
+ "nao_dip": -4,
+ "nao_esq": -22,
+ "nao_dir": 12
+},
+
+{
+"id": 51,
+
+"categoria": "Segurança",
+
+"titulo": "Pena de morte",
+
+"texto_crise": "Referendo para crimes hediondos.",
+
+"sim_pop": 35,
+ "sim_tes": -15,
+ "sim_con": 10,
+ "sim_for": 18,
+ "sim_jud": -45,
+ "sim_dip": -50,
+ "sim_esq": -40,
+ "sim_dir": 35,
+
+"nao_pop": -40,
+ "nao_tes": 10,
+ "nao_con": -8,
+ "nao_for": -15,
+ "nao_jud": 35,
+ "nao_dip": 40,
+ "nao_esq": 30,
+ "nao_dir": -30
+},
+
+{
+"id": 52,
+
+"categoria": "Segurança",
+
+"titulo": "Desocupação",
+
+"texto_crise": "Usar força máxima contra invasões de terra",
+
+"sim_pop": 10,
+ "sim_tes": -5,
+ "sim_con": 12,
+ "sim_for": 28,
+ "sim_jud": 14,
+ "sim_dip": -12,
+ "sim_esq": -45,
+ "sim_dir": 35,
+
+"nao_pop": -12,
+ "nao_tes": 4,
+ "nao_con": -10,
+ "nao_for": -22,
+ "nao_jud": -12,
+ "nao_dip": 8,
+ "nao_esq": 35,
+ "nao_dir": -25
+},
+
+{
+"id": 53,
+
+"categoria": "Segurança",
+
+"titulo": "GLO nas ruas",
+
+"texto_crise": "Exército patrulhando o centro das cidades.",
+
+"sim_pop": 22,
+ "sim_tes": -15,
+ "sim_con": 15,
+ "sim_for": 40,
+ "sim_jud": -25,
+ "sim_dip": -18,
+ "sim_esq": -28,
+ "sim_dir": 25,
+
+"nao_pop": -18,
+ "nao_tes": 10,
+ "nao_con": -12,
+ "nao_for": -35,
+ "nao_jud": 18,
+ "nao_dip": 12,
+ "nao_esq": 20,
+ "nao_dir": -20
+},
+
+{
+"id": 54,
+
+"categoria": "Segurança",
+
+"titulo": "Cotas Univ.",
+
+"texto_crise": "Dobrar vagas para cotas raciais",
+
+"sim_pop": 10,
+ "sim_tes": -8,
+ "sim_con": -12,
+ "sim_for": -15,
+ "sim_jud": 8,
+ "sim_dip": 10,
+ "sim_esq": 35,
+ "sim_dir": -35,
+
+"nao_pop": -8,
+ "nao_tes": 6,
+ "nao_con": 10,
+ "nao_for": 12,
+ "nao_jud": -5,
+ "nao_dip": -8,
+ "nao_esq": -28,
+ "nao_dir": 28
+},
+
+{
+"id": 55,
+
+"categoria": "Segurança",
+
+"titulo": "Internação",
+
+"texto_crise": "Internar usuários de crack à força",
+
+"sim_pop": 28,
+ "sim_tes": -18,
+ "sim_con": 12,
+ "sim_for": 15,
+ "sim_jud": -25,
+ "sim_dip": -5,
+ "sim_esq": -30,
+ "sim_dir": 25,
+
+"nao_pop": -22,
+ "nao_tes": 12,
+ "nao_con": -10,
+ "nao_for": -12,
+ "nao_jud": 20,
+ "nao_dip": 4,
+ "nao_esq": 25,
+ "nao_dir": -20
+},
+
+{
+"id": 56,
+
+"categoria": "Segurança",
+
+"titulo": "Escola Militar",
+
+"texto_crise": "Entregar escolas públicas p/ gestão do Exército.",
+
+"sim_pop": 15,
+ "sim_tes": -10,
+ "sim_con": 8,
+ "sim_for": 35,
+ "sim_jud": -12,
+ "sim_dip": -5,
+ "sim_esq": -35,
+ "sim_dir": 35,
+
+"nao_pop": -12,
+ "nao_tes": 8,
+ "nao_con": -6,
+ "nao_for": -30,
+ "nao_jud": 10,
+ "nao_dip": 4,
+ "nao_esq": 28,
+ "nao_dir": -28
+},
+
+{
+"id": 57,
+
+"categoria": "Segurança",
+
+"titulo": "Guardas Bairro",
+
+"texto_crise": "Autorizar milícias privadas de segurança.",
+
+"sim_pop": -15,
+ "sim_tes": 0,
+ "sim_con": -10,
+ "sim_for": -25,
+ "sim_jud": -50,
+ "sim_dip": -15,
+ "sim_esq": -35,
+ "sim_dir": 12,
+
+"nao_pop": 12,
+ "nao_tes": 0,
+ "nao_con": 8,
+ "nao_for": 18,
+ "nao_jud": 35,
+ "nao_dip": 10,
+ "nao_esq": 15,
+ "nao_dir": -10
+},
+
+{
+"id": 58,
+
+"categoria": "Segurança",
+
+"titulo": "Espionagem Zap",
+
+"texto_crise": "Monitorar conversas privadas s/ ordem judicial.",
+
+"sim_pop": -35,
+ "sim_tes": -5,
+ "sim_con": 12,
+ "sim_for": 28,
+ "sim_jud": -50,
+ "sim_dip": -22,
+ "sim_esq": -15,
+ "sim_dir": 5,
+
+"nao_pop": 25,
+ "nao_tes": 4,
+ "nao_con": -10,
+ "nao_for": -22,
+ "nao_jud": 35,
+ "nao_dip": 15,
+ "nao_esq": 10,
+ "nao_dir": -4
+},
+
+{
+"id": 59,
+
+"categoria": "Segurança",
+
+"titulo": "Prisão Privada",
+
+"texto_crise": "Entregar presídios para empresas lucrarem.",
+
+"sim_pop": -18,
+ "sim_tes": 25,
+ "sim_con": 15,
+ "sim_for": 5,
+ "sim_jud": -28,
+ "sim_dip": -10,
+ "sim_esq": -30,
+ "sim_dir": 28,
+
+"nao_pop": 12,
+ "nao_tes": -15,
+ "nao_con": -12,
+ "nao_for": -4,
+ "nao_jud": 20,
+ "nao_dip": 8,
+ "nao_esq": 22,
+ "nao_dir": -22
+},
+
+{
+"id": 60,
+
+"categoria": "Segurança",
+
+"titulo": "Auxílio Preso",
+
+"texto_crise": "Extinguir o auxílio para famílias de detentos.",
+
+"sim_pop": 22,
+ "sim_tes": 18,
+ "sim_con": 12,
+ "sim_for": 12,
+ "sim_jud": -12,
+ "sim_dip": -5,
+ "sim_esq": -40,
+ "sim_dir": 30,
+
+"nao_pop": -18,
+ "nao_tes": -15,
+ "nao_con": -10,
+ "nao_for": -10,
+ "nao_jud": 8,
+ "nao_dip": 4,
+ "nao_esq": 30,
+ "nao_dir": -22
+},
+
+{
+"id": 61,
+
+"categoria": "Geopolítica",
+
+"titulo": "Alinhamento BRICS",
+
+"texto_crise": "Abandonar o Dólar no comércio exterior.",
+
+"sim_pop": 5,
+ "sim_tes": 18,
+ "sim_con": -15,
+ "sim_for": 8,
+ "sim_jud": 0,
+ "sim_dip": -45,
+ "sim_esq": 35,
+ "sim_dir": -35,
+
+"nao_pop": -3,
+ "nao_tes": -12,
+ "nao_con": 12,
+ "nao_for": -6,
+ "nao_jud": 0,
+ "nao_dip": 35,
+ "nao_esq": -25,
+ "nao_dir": 25
+},
+
+{
+"id": 62,
+
+"categoria": "Geopolítica",
+
+"titulo": "Guerra Oriente",
+
+"texto_crise": "Apoiar militarmente Israel contra o Irã.",
+
+"sim_pop": -10,
+ "sim_tes": -18,
+ "sim_con": 12,
+ "sim_for": 22,
+ "sim_jud": 0,
+ "sim_dip": 35,
+ "sim_esq": -45,
+ "sim_dir": 40,
+
+"nao_pop": 6,
+ "nao_tes": 12,
+ "nao_con": -8,
+ "nao_for": -15,
+ "nao_jud": 0,
+ "nao_dip": -30,
+ "nao_esq": 35,
+ "nao_dir": -35
+},
+
+{
+"id": 63,
+
+"categoria": "Geopolítica",
+
+"titulo": "Base dos EUA",
+
+"texto_crise": "Alugar base militar para os Estados Unidos.",
+
+"sim_pop": -8,
+ "sim_tes": 25,
+ "sim_con": 15,
+ "sim_for": 35,
+ "sim_jud": 4,
+ "sim_dip": 40,
+ "sim_esq": -50,
+ "sim_dir": 35,
+
+"nao_pop": 5,
+ "nao_tes": -18,
+ "nao_con": -12,
+ "nao_for": -28,
+ "nao_jud": -2,
+ "nao_dip": -35,
+ "nao_esq": 35,
+ "nao_dir": -25
+},
+
+{
+"id": 64,
+
+"categoria": "Geopolítica",
+
+"titulo": "Ajuda Humanitária",
+
+"texto_crise": "Enviar R$ 1 bi para refugiados de guerra.",
+
+"sim_pop": 18,
+ "sim_tes": -22,
+ "sim_con": -5,
+ "sim_for": 0,
+ "sim_jud": 0,
+ "sim_dip": 30,
+ "sim_esq": 25,
+ "sim_dir": -15,
+
+"nao_pop": -12,
+ "nao_tes": 18,
+ "nao_con": 4,
+ "nao_for": 0,
+ "nao_jud": 0,
+ "nao_dip": -22,
+ "nao_esq": -18,
+ "nao_dir": 12
+},
+
+{
+"id": 65,
+
+"categoria": "Geopolítica",
+
+"titulo": "Compra caças",
+
+"texto_crise": "Gastar R$ 20 bi em aviões de guerra.",
+
+"sim_pop": -15,
+ "sim_tes": -45,
+ "sim_con": 15,
+ "sim_for": 45,
+ "sim_jud": 0,
+ "sim_dip": 12,
+ "sim_esq": -20,
+ "sim_dir": 15,
+
+"nao_pop": 10,
+ "nao_tes": 35,
+ "nao_con": -12,
+ "nao_for": -40,
+ "nao_jud": 0,
+ "nao_dip": -8,
+ "nao_esq": 15,
+ "nao_dir": -12
+},
+
+{
+"id": 66,
+
+"categoria": "Geopolítica",
+
+"titulo": "Muro Fronteira",
+
+"texto_crise": "Construir barreira contra imigrantes.",
+
+"sim_pop": 12,
+ "sim_tes": -18,
+ "sim_con": 12,
+ "sim_for": 15,
+ "sim_jud": -10,
+ "sim_dip": -25,
+ "sim_esq": -40,
+ "sim_dir": 40,
+
+"nao_pop": -10,
+ "nao_tes": 12,
+ "nao_con": -8,
+ "nao_for": -12,
+ "nao_jud": 8,
+ "nao_dip": 18,
+ "nao_esq": 30,
+ "nao_dir": -30
+},
+
+{
+"id": 67,
+
+"categoria": "Geopolítica",
+
+"titulo": "Hackers",
+
+"texto_crise": "Criar exército digital para atacar rivais.",
+
+"sim_pop": -12,
+ "sim_tes": -15,
+ "sim_con": 5,
+ "sim_for": 35,
+ "sim_jud": -30,
+ "sim_dip": -40,
+ "sim_esq": -5,
+ "sim_dir": 15,
+
+"nao_pop": 8,
+ "nao_tes": 10,
+ "nao_con": -4,
+ "nao_for": -28,
+ "nao_jud": 22,
+ "nao_dip": 30,
+ "nao_esq": 4,
+ "nao_dir": -12
+},
+
+{
+"id": 68,
+
+"categoria": "Geopolítica",
+
+"titulo": "Mineração Polo",
+
+"texto_crise": "Enviar navios para minerar na Antártida.",
+
+"sim_pop": 4,
+ "sim_tes": 25,
+ "sim_con": 8,
+ "sim_for": 18,
+ "sim_jud": -5,
+ "sim_dip": -35,
+ "sim_esq": -20,
+ "sim_dir": 18,
+
+"nao_pop": -2,
+ "nao_tes": -18,
+ "nao_con": -6,
+ "nao_for": -14,
+ "nao_jud": 4,
+ "nao_dip": 25,
+ "nao_esq": 15,
+ "nao_dir": -15
+},
+
+{
+"id": 69,
+
+"categoria": "Geopolítica",
+
+"titulo": "Sair da ONU",
+
+"texto_crise": "Abandonar tratados de Direitos Humanos.",
+
+"sim_pop": -25,
+ "sim_tes": 5,
+ "sim_con": 15,
+ "sim_for": 18,
+ "sim_jud": -50,
+ "sim_dip": -60,
+ "sim_esq": -50,
+ "sim_dir": 45,
+
+"nao_pop": 18,
+ "nao_tes": -4,
+ "nao_con": -12,
+ "nao_for": -15,
+ "nao_jud": 40,
+ "nao_dip": 50,
+ "nao_esq": 40,
+ "nao_dir": -35
+},
+
+{
+"id": 70,
+
+"categoria": "Geopolítica",
+
+"titulo": "Acordo UE",
+
+"texto_crise": "Assinar livre comércio com a Europa.",
+
+"sim_pop": 10,
+ "sim_tes": 22,
+ "sim_con": 5,
+ "sim_for": -10,
+ "sim_jud": 4,
+ "sim_dip": 35,
+ "sim_esq": -15,
+ "sim_dir": -22,
+
+"nao_pop": -8,
+ "nao_tes": -15,
+ "nao_con": -4,
+ "nao_for": 8,
+ "nao_jud": -2,
+ "nao_dip": -28,
+ "nao_esq": 12,
+ "nao_dir": 18
+},
+
+{
+"id": 71,
+
+"categoria": "Geopolítica",
+
+"titulo": "Renegociar FMI",
+
+"texto_crise": "Aceitar austeridade total para pagar dívida.",
+
+"sim_pop": -45,
+ "sim_tes": 35,
+ "sim_con": 18,
+ "sim_for": 0,
+ "sim_jud": 5,
+ "sim_dip": 25,
+ "sim_esq": -50,
+ "sim_dir": 25,
+
+"nao_pop": 35,
+ "nao_tes": -40,
+ "nao_con": -15,
+ "nao_for": 0,
+ "nao_jud": -4,
+ "nao_dip": -22,
+ "nao_esq": 40,
+ "nao_dir": -20
+},
+
+{
+"id": 72,
+
+"categoria": "Geopolítica",
+
+"titulo": "Asilo Político",
+
+"texto_crise": "Dar asilo a dissidente procurado pelos EUA.",
+
+"sim_pop": 8,
+ "sim_tes": 0,
+ "sim_con": -15,
+ "sim_for": -10,
+ "sim_jud": 12,
+ "sim_dip": -40,
+ "sim_esq": 35,
+ "sim_dir": -25,
+
+"nao_pop": -5,
+ "nao_tes": 0,
+ "nao_con": 12,
+ "nao_for": 8,
+ "nao_jud": -10,
+ "nao_dip": 30,
+ "nao_esq": -25,
+ "nao_dir": 20
+},
+
+{
+"id": 73,
+
+"categoria": "Geopolítica",
+
+"titulo": "Satélite Espião",
+
+"texto_crise": "Lançar rede de vigilância orbital.",
+
+"sim_pop": -18,
+ "sim_tes": -22,
+ "sim_con": 5,
+ "sim_for": 35,
+ "sim_jud": -25,
+ "sim_dip": -15,
+ "sim_esq": -10,
+ "sim_dir": 15,
+
+"nao_pop": 12,
+ "nao_tes": 18,
+ "nao_con": -4,
+ "nao_for": -28,
+ "nao_jud": 20,
+ "nao_dip": 12,
+ "nao_esq": 8,
+ "nao_dir": -12
+},
+
+{
+"id": 74,
+
+"categoria": "Geopolítica",
+
+"titulo": "Jerusalém",
+
+"texto_crise": "Mudar embaixada para Jerusalém (provocação).",
+
+"sim_pop": -10,
+ "sim_tes": -5,
+ "sim_con": 8,
+ "sim_for": 5,
+ "sim_jud": 0,
+ "sim_dip": -50,
+ "sim_esq": -20,
+ "sim_dir": 40,
+
+"nao_pop": 5,
+ "nao_tes": 4,
+ "nao_con": -6,
+ "nao_for": -2,
+ "nao_jud": 0,
+ "nao_dip": 40,
+ "nao_esq": 15,
+ "nao_dir": -30
+},
+
+{
+"id": 75,
+
+"categoria": "Geopolítica",
+
+"titulo": "Patrulha Polar",
+
+"texto_crise": "Militarizar navios de pesquisa no Ártico.",
+
+"sim_pop": -5,
+ "sim_tes": -15,
+ "sim_con": 4,
+ "sim_for": 22,
+ "sim_jud": 0,
+ "sim_dip": -12,
+ "sim_esq": -8,
+ "sim_dir": 12,
+
+"nao_pop": 3,
+ "nao_tes": 10,
+ "nao_con": -2,
+ "nao_for": -18,
+ "nao_jud": 0,
+ "nao_dip": 10,
+ "nao_esq": 6,
+ "nao_dir": -8
+}
+]
