@@ -4,7 +4,7 @@ def menu(tela):
     video = "assets\\videos\\Intro.mp4"
     cap = cv2.VideoCapture(video)
 
-    fonte = pygame.font.SysFont('Stencil', 36, bold=True)
+    fonte = pygame.font.SysFont('Times New Roman', 36, bold=True)
     Branco = (255, 255, 255)
     Amarelo = (255, 255, 0)
 

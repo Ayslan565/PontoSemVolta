@@ -9,4 +9,4 @@ caminho_btn_vermelho = "assets\\image\\nao.png"
 
 
 vermelhoBotao = (180,50,50)
-fonte_titulo = pygame.font.SysFont('Impact', 40)
+fonte_titulo = pygame.font.SysFont('Times New Roman', 40)

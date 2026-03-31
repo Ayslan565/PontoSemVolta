@@ -2,13 +2,13 @@ import json
 import pandas as pd
 import os
 import random 
-
 try:
     df = pd.read_excel("jogo.xlsx")
     df.to_json("data/event.json", orient="records", force_ascii=False, indent=4)
     print("Arquivo JSON atualizado com sucesso!")
 except Exception as e:
     print("Aviso: Não foi possível ler o Excel. Tentando usar o JSON existente.")
+
 
 class Engine:
     def __init__(self):
@@ -59,33 +59,33 @@ class Engine:
             self.status['AP_DIR'] += evento.get('nao_dir', 0)
             
         for k in self.status:
-            self.status[k] = max(0, min(100, self.status[k]))
+            self.status[k] = max(0, min(1000, self.status[k]))
         
         return self.verificar_finais()
     
     def verificar_finais(self):
-        if self.status['TES'] >= 100: return "final_tesouro_100"
+        if self.status['TES'] >= 1000: return "final_tesouro_100"
         if self.status['TES'] <= 0:   return "final_tesouro_0"
         
-        if self.status['FOR'] >= 100: return "final_forca_100"
+        if self.status['FOR'] >= 1000: return "final_forca_100"
         if self.status['FOR'] <= 0:   return "final_forca_0"
         
-        if self.status['CON'] >= 100: return "final_congresso_100"
+        if self.status['CON'] >= 1000: return "final_congresso_100"
         if self.status['CON'] <= 0:   return "final_congresso_0"
         
-        if self.status['JUD'] >= 100: return "final_judiciario_100"
+        if self.status['JUD'] >= 1000: return "final_judiciario_100"
         if self.status['JUD'] <= 0:   return "final_judiciario_0"
         
-        if self.status['DIP'] >= 100: return "final_diplomacia_100"
+        if self.status['DIP'] >= 1000: return "final_diplomacia_100"
         if self.status['DIP'] <= 0:   return "final_diplomacia_0"
         
-        if self.status['AP_ESQ'] >= 100: return "final_esquerda_100"
+        if self.status['AP_ESQ'] >= 1000: return "final_esquerda_100"
         if self.status['AP_ESQ'] <= 0:   return "final_esquerda_0"
         
-        if self.status['AP_DIR'] >= 100: return "final_direita_100"
+        if self.status['AP_DIR'] >= 1000: return "final_direita_100"
         if self.status['AP_DIR'] <= 0:   return "final_direita_0"
         
-        if self.status['POP'] >= 100: return "final_popularidade_100"
+        if self.status['POP'] >= 1000: return "final_popularidade_100"
         if self.status['POP'] <= 0:   return "final_popularidade_0"
 
         # Mudamos a verificação aqui também: se a lista não está vazia, o jogo continua!
