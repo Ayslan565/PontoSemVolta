@@ -34,11 +34,10 @@ som_clique = pygame.mixer.Sound("assets\\sounds\\escolha.mp3")
 som_clique.set_volume(0.8)
 
 # --- Configuração do som de respiração ---
-som_respiracao = pygame.mixer.Sound("assets\\sounds\\resp.mp3") # Substitua pelo nome exato do seu arquivo
+som_respiracao = pygame.mixer.Sound("assets\\sounds\\resp.mp3") 
 som_respiracao.set_volume(0.4) 
 ultimo_toque_respiracao = 0
-intervalo_respiracao = random.randint(10000, 20000) # Começa tocando entre 10 a 20 segundos
-
+intervalo_respiracao = random.randint(10000, 20000) 
 motor = Engine()
 mostrar_status = False
 

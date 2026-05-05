@@ -77,44 +77,57 @@ def desenhar_painel_status(tela, status_dit, mostrar_status=True):
     tela.blit(txt_icone, txt_icone.get_rect(center=BotaoStatus.center)) 
     
     if mostrar_status:
-        larg_painel = 220
-        alt_painel = 400
+        larg_painel = 420 
+        alt_painel = 320  
         x_painel = largura_tela - larg_painel - 20 
         y_painel = 80 
-
-        pygame.draw.rect(tela, (25, 25, 25), (x_painel, y_painel, larg_painel, alt_painel), border_radius=15) 
-
+        
+        pygame.draw.rect(tela, (25, 25, 25), (x_painel, y_painel, larg_painel, alt_painel), border_radius=15)
+        
+        
         fonte_titulo = pygame.font.SysFont('Times New Roman', 26)
         txt_titulo = fonte_titulo.render('INFORMAÇÕES', True, (255, 255, 255))
         centro_x_painel = x_painel + (larg_painel // 2)
         rect_titulo = txt_titulo.get_rect(centerx=centro_x_painel, top=y_painel + 15)
         tela.blit(txt_titulo, rect_titulo)
-
+        
         atributos = [
             ('POP', 'Popularidade', (50, 200, 50)),
             ('TES', 'Tesouro', (220, 180, 50)),
             ('FOR', 'Forças Armadas', (200, 50, 50)),
             ('CON', 'Congresso', (50, 100, 200)),
-            ('JUD', 'Judiciário', (200, 200, 200))
+            ('JUD', 'Judiciário', (200, 200, 200)),
+            ('DIP', 'Diplomacia', (180, 100, 200)),
+            ('AP_ESQ', 'Esquerda', (220, 60, 60)),
+            ('AP_DIR', 'Direita', (60, 80, 220))
         ]
-
+        
         fonte_labels = pygame.font.SysFont('Times New Roman', 16, bold=True)
-        y_atual = y_painel + 60 
-
-        for chave, nome, cor in atributos:
-            valor = status_dit.get(chave, 50) 
+        
+        y_inicial = y_painel + 60
+        y_atual = y_inicial
+        x_coluna = x_painel + 20
+        
+        for i, (chave, nome, cor) in enumerate(atributos):
+            valor = status_dit.get(chave, 50)
             
+            if i == 4:
+                x_coluna = x_painel + 220 
+                y_atual = y_inicial       
+                
             txt = fonte_labels.render(nome, True, (180, 180, 180))
-            tela.blit(txt, (x_painel + 20, y_atual))
+            tela.blit(txt, (x_coluna, y_atual))
             
-            largura_barra_max = 180
+            largura_barra_max = 170 
             altura_barra = 15
-            pygame.draw.rect(tela, (60, 60, 60), (x_painel + 20, y_atual + 20, largura_barra_max, altura_barra), border_radius=5) 
             
-            largura_preenchida = (valor / 100) * largura_barra_max
+            pygame.draw.rect(tela, (60, 60, 60), (x_coluna, y_atual + 20, largura_barra_max, altura_barra), border_radius=5)
+            
+            largura_preenchida = (valor / 1000) * largura_barra_max 
+            
             if largura_preenchida > 0: 
-                pygame.draw.rect(tela, cor, (x_painel + 20, y_atual + 20, int(largura_preenchida), altura_barra), border_radius=5) 
-            
-            y_atual += 65
+                pygame.draw.rect(tela, cor, (x_coluna, y_atual + 20, int(largura_preenchida), altura_barra), border_radius=5)
+                
+            y_atual += 60 
             
     return BotaoStatus
