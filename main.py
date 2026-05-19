@@ -1,10 +1,10 @@
 import pygame
 import math
 import random # Importação para gerar tempos aleatórios
-from ui import *
-from menu import *
+from src.ui.ui import *
+from src.states.menu import *
 import sys
-from engine import *
+from src.core.engine import *
 
 pygame.init()
 tamanho_tela = (800, 600)

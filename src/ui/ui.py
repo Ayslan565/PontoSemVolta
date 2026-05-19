@@ -1,5 +1,5 @@
 import pygame
-from design import *
+from src.ui.design import *
 
 animacao = {'nao': 0.0, 'sim': 0.0}
 

@@ -17,7 +17,6 @@ class Engine:
             'CON': 50, 'JUD': 50, 'AP_ESQ': 50, 'AP_DIR': 50
         }
         self.eventos = self.carregar_eventos()
-        # MÁGICA: Não precisamos mais da variável self.evento_atual!
 
     def carregar_eventos(self):
         with open("data/event.json", "r", encoding="utf-8") as f:
