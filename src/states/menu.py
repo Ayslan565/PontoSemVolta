@@ -2,13 +2,23 @@ import pygame
 import cv2
 import sys
 import os
+import json
 
 def carregar_som(caminho):
     if os.path.exists(caminho):
         return pygame.mixer.Sound(caminho)
-    else:
-        print(f"Aviso: Arquivo de som não encontrado -> {caminho}")
-        return None
+    return None
+
+def carregar_finais_desbloqueados():
+    caminho_save = "data\\save.json"
+    if os.path.exists(caminho_save):
+        try:
+            with open(caminho_save, 'r', encoding='utf-8') as f:
+                dados = json.load(f)
+                return dados.get("finais_vistos", [])
+        except Exception:
+            return []
+    return []
 
 def menu(tela):
     video = "assets\\videos\\Intro.mp4"
@@ -23,23 +33,26 @@ def menu(tela):
         pygame.mixer.music.load(caminho_musica)
         pygame.mixer.music.set_volume(0.4)
         pygame.mixer.music.play(-1)
-    else:
-        print("Aviso: Música de fundo não encontrada.")
 
     som_navegar = carregar_som("assets\\sounds\\escolha.mp3")
     som_selecionar = carregar_som("assets\\sounds\\resp.mp3")
 
     fonte = pygame.font.SysFont('Times New Roman', 42, bold=True)
+    fonte_contador = pygame.font.SysFont('Times New Roman', 24)
+    
     Branco = (255, 255, 255)
     Amarelo = (255, 200, 0)
     Sombra = (30, 30, 30)
 
-    opcoes = ["Iniciar", "Opções", "Sair"]
+    opcoes = ["Iniciar", "OpÃ§Ãµes", "Sair"]
     selecionado = 0
     clock = pygame.time.Clock()
 
     overlay = pygame.Surface((largura_tela, altura_tela), pygame.SRCALPHA)
     overlay.fill((0, 0, 0, 120))
+    
+    finais_vistos = carregar_finais_desbloqueados()
+    total_finais = 18
 
     while True:
         sucesso, frame = cap.read()
@@ -79,7 +92,7 @@ def menu(tela):
                         pygame.mixer.music.stop()
                         return True
                     elif selecionado == 1:
-                        print("Abrir menu de opções...")
+                        pass
                     elif selecionado == 2:
                         pygame.quit()
                         sys.exit()
@@ -97,6 +110,10 @@ def menu(tela):
             img_texto = fonte.render(texto, True, cor)
             rect_texto = img_texto.get_rect(center=(pos_x, pos_y))
             tela.blit(img_texto, rect_texto)
+
+        texto_finais = f"Finais Descobertos: {len(finais_vistos)}/{total_finais}"
+        img_contador = fonte_contador.render(texto_finais, True, Branco)
+        tela.blit(img_contador, (20, altura_tela - 40))
 
         pygame.display.flip()
         clock.tick(30)

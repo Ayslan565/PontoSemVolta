@@ -1,103 +1,94 @@
-import pygame
-import math
-import random # Importação para gerar tempos aleatórios
-from src.ui.ui import *
-from src.states.menu import *
-import sys
-from src.core.engine import *
+import json
+import pandas as pd
+import os
+import random 
+try:
+    df = pd.read_excel("jogo.xlsx")
+    df.to_json("data/event.json", orient="records", force_ascii=False, indent=4)
+    print("Arquivo JSON atualizado com sucesso!")
+except Exception as e:
+    print("Aviso: Não foi possível ler o Excel. Tentando usar o JSON existente.")
 
-pygame.init()
-tamanho_tela = (800, 600)
-podeclicar = True
-espera = 1000
-ultimo_click = 0
-tela = pygame.display.set_mode(tamanho_tela, pygame.SCALED)
 
-caminho_imagem = "assets\\image\\background.png" 
-imagem_fundo = pygame.image.load(caminho_imagem).convert()
-img_papel = pygame.image.load("assets\\image\\papel.png").convert_alpha()
-img_botao_verde = pygame.image.load("assets\\image\\sim.png").convert_alpha()
-img_botao_vermelho = pygame.image.load("assets\\image\\nao.png").convert_alpha()
+class Engine:
+    def __init__(self):
+        self.status = {
+            'POP': 50, 'TES': 50, 'DIP': 50, 'FOR': 50, 
+            'CON': 50, 'JUD': 50, 'AP_ESQ': 50, 'AP_DIR': 50
+        }
+        self.eventos = self.carregar_eventos()
 
-pygame.display.set_caption("Ponto sem volta")
-tela_cheia = False
+    def carregar_eventos(self):
+        with open("data/event.json", "r", encoding="utf-8") as f:
+            eventos_carregados = json.load(f)
+            random.shuffle(eventos_carregados) 
+            return eventos_carregados
 
-if menu(tela):
-    pass
+    def obter_pergunta_atual(self):
+        # Se ainda tem cartas no baralho, lê o texto da primeira carta (índice 0)
+        if len(self.eventos) > 0:
+            return self.eventos[0].get('texto_crise', 'Erro ao ler pergunta')
+        return "Fim do mandato!"
 
-musica = "assets\\sounds\\intro.mp3"
-pygame.mixer.music.load(musica)
-pygame.mixer.music.set_volume(0.5)
-pygame.mixer.music.play(-1)
+    def processar_escolha(self, escolha):
+        if len(self.eventos) == 0:
+            return "vitoria"
 
-som_clique = pygame.mixer.Sound("assets\\sounds\\escolha.mp3")
-som_clique.set_volume(0.8)
-
-# --- Configuração do som de respiração ---
-som_respiracao = pygame.mixer.Sound("assets\\sounds\\resp.mp3") 
-som_respiracao.set_volume(0.4) 
-ultimo_toque_respiracao = 0
-intervalo_respiracao = random.randint(10000, 20000) 
-motor = Engine()
-mostrar_status = False
-
-while True:
-    tempo = pygame.time.get_ticks()
-    largura_atual, altura_atual = tela.get_size()
-    
-    # --- Toca o som de respiração aleatoriamente ---
-    if tempo - ultimo_toque_respiracao > intervalo_respiracao:
-        som_respiracao.play()
-        ultimo_toque_respiracao = tempo
-        intervalo_respiracao = random.randint(15000, 40000) # Sorteia o próximo suspiro (entre 15 e 40 seg)
+        # AQUI ESTÁ A MÁGICA: .pop(0) pega a primeira carta e DELETA ela do baralho!
+        evento = self.eventos.pop(0) 
         
-    onda_y = math.sin(tempo * 0.0015) * 4 + math.sin(tempo * 0.0006) * 3
-    onda_x = math.cos(tempo * 0.0010) * 2 + math.cos(tempo * 0.0004) * 2
-    
-    fundo_ajustado = pygame.transform.scale(imagem_fundo, (largura_atual + 20, altura_atual + 20))
-    tela.blit(fundo_ajustado, (-10 + onda_x, -10 + onda_y))
-    
-    pergunta_atual = motor.obter_pergunta_atual()
-    btn_nao, btn_sim = criar_elementos(tela, img_botao_vermelho, img_botao_verde, img_papel, pergunta_atual)
-    btn_status = desenhar_painel_status(tela, motor.status, mostrar_status)
-    
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
+        if escolha == "sim":
+            self.status['POP'] += evento.get('sim_pop', 0)
+            self.status['TES'] += evento.get('sim_tes', 0)
+            self.status['CON'] += evento.get('sim_con', 0)
+            self.status['FOR'] += evento.get('sim_for', 0)
+            self.status['JUD'] += evento.get('sim_jud', 0)
+            self.status['DIP'] += evento.get('sim_dip', 0)
+            self.status['AP_ESQ'] += evento.get('sim_esq', 0)
+            self.status['AP_DIR'] += evento.get('sim_dir', 0)
+
+        elif escolha == "nao":
+            self.status['POP'] += evento.get('nao_pop', 0)
+            self.status['TES'] += evento.get('nao_tes', 0)
+            self.status['CON'] += evento.get('nao_con', 0)
+            self.status['FOR'] += evento.get('nao_for', 0)
+            self.status['JUD'] += evento.get('nao_jud', 0)
+            self.status['DIP'] += evento.get('nao_dip', 0)
+            self.status['AP_ESQ'] += evento.get('nao_esq', 0)
+            self.status['AP_DIR'] += evento.get('nao_dir', 0)
             
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_F11:
-                pygame.display.toggle_fullscreen()
-            elif event.key == pygame.K_ESCAPE:
-                pygame.quit()
-                sys.exit()
+        for k in self.status:
+            self.status[k] = max(0, min(1000, self.status[k]))
+        
+        return self.verificar_finais()
+    
+    def verificar_finais(self):
+        if self.status['TES'] >= 1000: return "assets\\videos\\finals\\trabalho 1.mp4"
+        if self.status['TES'] <= 0:   return "assets\\videos\\finals\\trabalho 2.mp4"
+        
+        if self.status['FOR'] >= 1000: return "final_forca_100"
+        if self.status['FOR'] <= 0:   return "assets\\videos\\finals\\trabalho 4.mp4"
+        
+        if self.status['CON'] >= 1000: return "assets\\videos\\finals\trabalho 5.mp4"
+        if self.status['CON'] <= 0:   return "assets\\videos\\finals\\trabalho 6.mp4"
+        
+        if self.status['JUD'] >= 1000: return "assets\\videos\\finals\\trabalho 7.mp4"
+        if self.status['JUD'] <= 0:   return "final_judiciario_0"
+        
+        if self.status['DIP'] >= 1000: return "final_diplomacia_100"
+        if self.status['DIP'] <= 0:   return "final_diplomacia_0"
+        
+        if self.status['AP_ESQ'] >= 1000: return "final_esquerda_100"
+        if self.status['AP_ESQ'] <= 0:   return "final_esquerda_0"
+        
+        if self.status['AP_DIR'] >= 1000: return "final_direita_100"
+        if self.status['AP_DIR'] <= 0:   return "final_direita_0"
+        
+        if self.status['POP'] >= 1000: return "final_popularidade_100"
+        if self.status['POP'] <= 0:   return "final_popularidade_0"
 
-        if event.type == pygame.MOUSEBUTTONDOWN and podeclicar:
-            if btn_status.collidepoint(event.pos):
-                mostrar_status = not mostrar_status 
-                som_clique.play()
-                
-            elif btn_sim.collidepoint(event.pos):
-                estado_jogo = motor.processar_escolha("sim")
-                podeclicar = False
-                ultimo_click = tempo
-                som_clique.play()
-                if estado_jogo != "jogando":
-                    pygame.quit()
-                    sys.exit()
-
-            elif btn_nao.collidepoint(event.pos):
-                estado_jogo = motor.processar_escolha("nao")
-                podeclicar = False
-                ultimo_click = tempo
-                som_clique.play()
-                if estado_jogo != "jogando":
-                    pygame.quit()
-                    sys.exit()
-                    
-    if not podeclicar:
-        if tempo - ultimo_click > espera:
-            podeclicar = True        
-
-    pygame.display.flip()
+        # Mudamos a verificação aqui também: se a lista não está vazia, o jogo continua!
+        if len(self.eventos) > 0:
+            return "jogando"
+        else:
+            return "vitoria"
