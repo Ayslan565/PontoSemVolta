@@ -64,28 +64,28 @@ class Engine:
     
     def verificar_finais(self):
         if self.status['TES'] >= 1000: return "assets\\videos\\finals\\trabalho 1.mp4"
-        if self.status['TES'] <= 0:   return "assets\\videos\\finals\\trabalho 2.mp4"
+        if self.status['TES'] <= 0: return "assets\\videos\\finals\\trabalho 2.mp4"
         
-        if self.status['FOR'] >= 1000: return "final_forca_100"
-        if self.status['FOR'] <= 0:   return "assets\\videos\\finals\\trabalho 4.mp4"
+        if self.status['FOR'] >=1000: return "assets\\videos\\finals\\trabalho 3.mp4"
+        if self.status['FOR'] <= 0: return "assets\\videos\\finals\\trabalho 4.mp4"
         
         if self.status['CON'] >= 1000: return "assets\\videos\\finals\trabalho 5.mp4"
-        if self.status['CON'] <= 0:   return "assets\\videos\\finals\\trabalho 6.mp4"
+        if self.status['CON'] <= 0: return "assets\\videos\\finals\\trabalho 6.mp4"
         
         if self.status['JUD'] >= 1000: return "assets\\videos\\finals\\trabalho 7.mp4"
-        if self.status['JUD'] <= 0:   return "final_judiciario_0"
+        if self.status['JUD'] <= 0: return "final_judiciario_0"
         
         if self.status['DIP'] >= 1000: return "final_diplomacia_100"
-        if self.status['DIP'] <= 0:   return "final_diplomacia_0"
+        if self.status['DIP'] <= 0: return "final_diplomacia_0"
         
         if self.status['AP_ESQ'] >= 1000: return "final_esquerda_100"
-        if self.status['AP_ESQ'] <= 0:   return "final_esquerda_0"
+        if self.status['AP_ESQ'] <= 0: return "final_esquerda_0"
         
         if self.status['AP_DIR'] >= 1000: return "final_direita_100"
-        if self.status['AP_DIR'] <= 0:   return "final_direita_0"
+        if self.status['AP_DIR'] <= 0: return "final_direita_0"
         
         if self.status['POP'] >= 1000: return "final_popularidade_100"
-        if self.status['POP'] <= 0:   return "final_popularidade_0"
+        if self.status['POP'] <= 0: return "final_popularidade_0"
 
         # Mudamos a verificação aqui também: se a lista não está vazia, o jogo continua!
         if len(self.eventos) > 0:
