@@ -3,7 +3,7 @@ import pandas as pd
 import os
 import random 
 try:
-    df = pd.read_excel("jogo.xlsx")
+    df = pd.read_excel("data\jogo.xlsx")
     df.to_json("data/event.json", orient="records", force_ascii=False, indent=4)
     print("Arquivo JSON atualizado com sucesso!")
 except Exception as e:
@@ -25,7 +25,6 @@ class Engine:
             return eventos_carregados
 
     def obter_pergunta_atual(self):
-        # Se ainda tem cartas no baralho, lê o texto da primeira carta (índice 0)
         if len(self.eventos) > 0:
             return self.eventos[0].get('texto_crise', 'Erro ao ler pergunta')
         return "Fim do mandato!"
@@ -34,7 +33,6 @@ class Engine:
         if len(self.eventos) == 0:
             return "vitoria"
 
-        # AQUI ESTÁ A MÁGICA: .pop(0) pega a primeira carta e DELETA ela do baralho!
         evento = self.eventos.pop(0) 
         
         if escolha == "sim":
@@ -87,7 +85,6 @@ class Engine:
         if self.status['POP'] >= 1000: return "final_popularidade_100"
         if self.status['POP'] <= 0: return "final_popularidade_0"
 
-        # Mudamos a verificação aqui também: se a lista não está vazia, o jogo continua!
         if len(self.eventos) > 0:
             return "jogando"
         else:

@@ -28,14 +28,14 @@ def menu(tela):
 
     pygame.mixer.init()
     
-    caminho_musica = "assets\\audio\\musica_menu.mp3"
+    caminho_musica = "assets\\sounds\\musica_menu.mp3"
     if os.path.exists(caminho_musica):
         pygame.mixer.music.load(caminho_musica)
         pygame.mixer.music.set_volume(0.4)
         pygame.mixer.music.play(-1)
 
-    som_navegar = carregar_som("assets\\sounds\\escolha.mp3")
-    som_selecionar = carregar_som("assets\\sounds\\resp.mp3")
+    som_navegar = carregar_som("assets\\sounds\\click.mp3")
+    som_selecionar = carregar_som("assets\\sounds\\menu.mp3")
 
     fonte = pygame.font.SysFont('Times New Roman', 42, bold=True)
     fonte_contador = pygame.font.SysFont('Times New Roman', 24)
@@ -44,7 +44,7 @@ def menu(tela):
     Amarelo = (255, 200, 0)
     Sombra = (30, 30, 30)
 
-    opcoes = ["Iniciar", "OpÃ§Ãµes", "Sair"]
+    opcoes = ["Iniciar", "Opções", "Sair"]
     selecionado = 0
     clock = pygame.time.Clock()
 
