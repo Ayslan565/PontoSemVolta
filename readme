@@ -1,4 +1,4 @@
-PROJETO_MANDATO/
+PROJETO_OPesodoMandato/
 │
 ├── main.py                 # Ponto de entrada (inicia o jogo e o loop principal)
 ├── engine.py               # Lógica do jogo (verificação de finais, flags e rodadas)
