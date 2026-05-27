@@ -52,6 +52,7 @@ def tocar_video(caminho_video, tela):
 
     while rodando and cap.isOpened():
         ret, frame = cap.read()
+        
         if not ret:
             break
             
@@ -98,6 +99,7 @@ if menu(tela):
     pass
 
 musica = "assets\\sounds\\intro.mp3"
+videos = "assets\\sounds\\finals_reformulado\\"
 pygame.mixer.music.load(musica)
 pygame.mixer.music.set_volume(0.5)
 pygame.mixer.music.play(-1)
@@ -156,7 +158,7 @@ while True:
                 
                 if estado_jogo != "jogando":
                     salvar_progresso_final(estado_jogo)
-                    caminho_video = f"assets\\videos\\finals\\{estado_jogo}.mp4" 
+                    caminho_video = f"assets\\videos\\finals\\{estado_jogo}.mp4"
                     tocar_video(caminho_video, tela)
                     
                     if menu(tela):
@@ -172,7 +174,7 @@ while True:
                 
                 if estado_jogo != "jogando":
                     salvar_progresso_final(estado_jogo)
-                    caminho_video = f"assets\\videos\\finals\\{estado_jogo}.mp4"
+                    caminho_video = f"assets\\videos\\finals\\{estado_jogo}"
                     tocar_video(caminho_video, tela)
                     
                     if menu(tela):
