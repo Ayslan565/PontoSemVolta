@@ -13,7 +13,7 @@ except Exception as e:
 class Engine:
     def __init__(self):
         self.status = {
-            'POP': 250, 'TES': 950, 'DIP': 250, 'FOR': 250, 
+            'POP': 250, 'TES': 250, 'DIP': 250, 'FOR': 250, 
             'CON': 250, 'JUD': 250, 'AP_ESQ': 250, 'AP_DIR': 250
         }
         self.eventos = self.carregar_eventos()
