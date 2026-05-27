@@ -13,8 +13,8 @@ except Exception as e:
 class Engine:
     def __init__(self):
         self.status = {
-            'POP': 50, 'TES': 50, 'DIP': 50, 'FOR': 50, 
-            'CON': 50, 'JUD': 50, 'AP_ESQ': 50, 'AP_DIR': 50
+            'POP': 250, 'TES': 950, 'DIP': 250, 'FOR': 250, 
+            'CON': 250, 'JUD': 250, 'AP_ESQ': 250, 'AP_DIR': 250
         }
         self.eventos = self.carregar_eventos()
 
@@ -61,23 +61,22 @@ class Engine:
         return self.verificar_finais()
     
     def verificar_finais(self):
-        if self.status['TES'] >= 1000: return "assets\\videos\\finals\\trabalho 1.mp4"
-        if self.status['TES'] <= 0: return "assets\\videos\\finals\\trabalho 2.mp4"
+        if self.status['TES'] >= 1000: return "trabalho 1"
+        if self.status['TES'] <= 0: return "trabalho 2"        
+        if self.status['FOR'] >=1000: return "trabalho 3"
+        if self.status['FOR'] <= 0: return "trabalho 4"
         
-        if self.status['FOR'] >=1000: return "assets\\videos\\finals\\trabalho 3.mp4"
-        if self.status['FOR'] <= 0: return "assets\\videos\\finals\\trabalho 4.mp4"
+        if self.status['CON'] >= 1000: return "trabalho 5"
+        if self.status['CON'] <= 0: return "trabalho 6"
         
-        if self.status['CON'] >= 1000: return "assets\\videos\\finals\\trabalho 5.mp4"
-        if self.status['CON'] <= 0: return "assets\\videos\\finals\\trabalho 6.mp4"
+        if self.status['JUD'] >= 1000: return "trabalho 7"
+        if self.status['JUD'] <= 0: return "trabalho 8"
         
-        if self.status['JUD'] >= 1000: return "assets\\videos\\finals\\trabalho 7.mp4"
-        if self.status['JUD'] <= 0: return "assets\\videos\\finals\\trabalho 8.mp4"
+        if self.status['DIP'] >= 1000: return "trabalho 9"
+        if self.status['DIP'] <= 0: return "trabalho 10"
         
-        if self.status['DIP'] >= 1000: return "assets\\videos\\finals\\trabalho 9.mp4"
-        if self.status['DIP'] <= 0: return "assets\\videos\\finals\\trabalho 10.mp4"
-        
-        if self.status['AP_ESQ'] >= 1000: return "assets\\videos\\finals\\trabalho 11.mp4"
-        if self.status['AP_ESQ'] <= 0: return "assets\\videos\\finals\\trabalho 12.mp4"
+        if self.status['AP_ESQ'] >= 1000: return "trabalho 11"
+        if self.status['AP_ESQ'] <= 0: return "trabalho 12"
         
         if self.status['AP_DIR'] >= 1000: return "final_direita_100"
         if self.status['AP_DIR'] <= 0: return "final_direita_0"

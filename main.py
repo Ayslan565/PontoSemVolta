@@ -41,8 +41,15 @@ def tocar_video(caminho_video, tela):
         fps = 30
         
     pygame.mixer.music.pause()
-    
+    caminho_audio = caminho_video.replace(".mp4", ".mp3")
     rodando = True
+    som_video = None
+    if os.path.exists(caminho_audio):
+        som_video = pygame.mixer.Sound(caminho_audio)
+        som_video.play()
+    else:
+        print(f"Aviso: Áudio não funciona, deu ruim {caminho_audio}")
+
     while rodando and cap.isOpened():
         ret, frame = cap.read()
         if not ret:
@@ -50,6 +57,7 @@ def tocar_video(caminho_video, tela):
             
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
+                if som_video: som_video.stop()
                 cap.release()
                 pygame.quit()
                 sys.exit()
@@ -65,6 +73,8 @@ def tocar_video(caminho_video, tela):
         pygame.display.flip()
         relogio.tick(fps)
         
+        if som_video: 
+            som_video.stop()
     cap.release()
     pygame.mixer.music.unpause()
 
