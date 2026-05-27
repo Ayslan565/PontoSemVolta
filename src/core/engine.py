@@ -61,30 +61,49 @@ class Engine:
         return self.verificar_finais()
     
     def verificar_finais(self):
-        if self.status['TES'] >= 1000: return "trabalho 1"
-        if self.status['TES'] <= 0: return "trabalho 2"        
-        if self.status['FOR'] >=1000: return "trabalho 3"
-        if self.status['FOR'] <= 0: return "trabalho 4"
-        
-        if self.status['CON'] >= 1000: return "trabalho 5"
-        if self.status['CON'] <= 0: return "trabalho 6"
-        
-        if self.status['JUD'] >= 1000: return "trabalho 7"
-        if self.status['JUD'] <= 0: return "trabalho 8"
-        
-        if self.status['DIP'] >= 1000: return "trabalho 9"
-        if self.status['DIP'] <= 0: return "trabalho 10"
-        
-        if self.status['AP_ESQ'] >= 1000: return "trabalho 11"
-        if self.status['AP_ESQ'] <= 0: return "trabalho 12"
-        
-        if self.status['AP_DIR'] >= 1000: return "final_direita_100"
-        if self.status['AP_DIR'] <= 0: return "final_direita_0"
-        
-        if self.status['POP'] >= 1000: return "final_popularidade_100"
-        if self.status['POP'] <= 0: return "final_popularidade_0"
-
-        if len(self.eventos) > 0:
-            return "jogando"
-        else:
-            return "vitoria"
+        #f01_levante_massas
+        if self.status['POP'] <= 0: return "f01_levante_massas"
+            
+        #f02_leilao_patria
+        if self.status['TES'] <= 0: return "f02_leilao_patria"
+            
+        #f03_guilhotina_papel
+        if self.status['CON'] <= 0: return "f03_guilhotina_papel"
+            
+        #f04_veredito_carcere
+        if self.status['JUD'] <= 0: return "f04_veredito_carcere"
+            
+        #f05_revolucao_vermelha
+        if self.status['AP_ESQ'] >= 1000: return "f05_revolucao_vermelha"
+            
+        #f06_punho_ferro
+        if self.status['AP_DIR'] >= 1000: return "f06_punho_ferro"
+            
+        #f07_guerra_civil
+        if self.status['DIP'] <= 0: return "final_diplomacia_0"
+            
+        #f08_estadista_centro
+        if self.status['CON'] >= 1000: return "f14_cong_1000"
+    
+        #f09_populista_carismatico
+        if self.status['POP'] >= 1000: return "f09_populista_carismatico"
+            
+        #f10_gerente_tecnocrata
+        if self.status['TES'] >= 1000: return "f10_gerente_tecnocrata"
+            
+        #f11_marionete_internacional
+        if self.status['DIP'] >= 1000: return "f11_marionete_internacional"
+            
+        #f12_golpe_militar
+        if self.status['FOR'] <= 0: return "f12_golpe_militar"
+            
+        #finais inacabados
+        if self.status['FOR'] >=1000: return "f13_forca_1000"
+        if self.status['JUD'] >= 1000: return "f15_jud_1000"
+        if self.status['AP_ESQ'] <= 0: return "f16_esquerda_0"
+        if self.status['AP_DIR'] <= 0: return "f17_direita_0"
+            
+            if len(self.eventos) > 0:
+                return "jogando"
+            else:
+                return "vitoria"
