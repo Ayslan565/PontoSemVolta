@@ -6,7 +6,6 @@ import os
 import json
 import cv2
 import numpy as np
-
 from src.ui.ui import *
 from src.states.menu import *
 from src.core.engine import *
@@ -32,30 +31,29 @@ def salvar_progresso_final(nome_do_final):
         with open(caminho_save, 'w', encoding='utf-8') as f:
             json.dump(dados, f, indent=4)
 
-def tocar_video(caminho_video, tela):
+def tocar_video(caminho_video, tela , caminho_audio):
     cap = cv2.VideoCapture(caminho_video)
     relogio = pygame.time.Clock()
     
     fps = cap.get(cv2.CAP_PROP_FPS)
     if fps == 0: 
         fps = 30
+    print(f"caminho_audio{caminho_audio}")
+    if os.path.exists(caminho_audio):
+        audio_video = pygame.mixer.Sound(caminho_audio)
+        audio_video.set_volume(0.8)
+        pygame.mixer.music.pause()
+        audio_video.play(0)
         
-    pygame.mixer.music.pause()
-    caminho_audio = caminho_video.replace(".mp4", ".mp3")
     rodando = True
     som_video = None
-    if os.path.exists(caminho_audio):
-        som_video = pygame.mixer.Sound(caminho_audio)
-        som_video.play()
-    else:
-        print(f"Aviso: Áudio não funciona, deu ruim {caminho_audio}")
-
+    
     while rodando and cap.isOpened():
         ret, frame = cap.read()
         
         if not ret:
             break
-            
+    
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 if som_video: som_video.stop()
@@ -99,16 +97,16 @@ if menu(tela):
     pass
 
 musica = "assets\\sounds\\intro.mp3"
-videos = "assets\\sounds\\finals_reformulado\\"
+#videos = "assets\\sounds\\finals_reformulado\\"
 pygame.mixer.music.load(musica)
-pygame.mixer.music.set_volume(0.5)
+pygame.mixer.music.set_volume(0.6)
 pygame.mixer.music.play(-1)
 
 som_clique = pygame.mixer.Sound("assets\\sounds\\escolha.mp3")
-som_clique.set_volume(0.8)
+som_clique.set_volume(0.5)
 
 som_respiracao = pygame.mixer.Sound("assets\\sounds\\resp.mp3") 
-som_respiracao.set_volume(0.4) 
+som_respiracao.set_volume(0.3) 
 ultimo_toque_respiracao = 0
 intervalo_respiracao = random.randint(10000, 20000) 
 motor = Engine()
@@ -159,7 +157,8 @@ while True:
                 if estado_jogo != "jogando":
                     salvar_progresso_final(estado_jogo)
                     caminho_video = f"assets\\videos\\finals\\{estado_jogo}.mp4"
-                    tocar_video(caminho_video, tela)
+                    caminho_audio = f"assets\\sounds\\finals_reformulado\\{estado_jogo}.mp3"
+                    tocar_video(caminho_video, tela , caminho_audio)
                     
                     if menu(tela):
                         pass
@@ -174,8 +173,9 @@ while True:
                 
                 if estado_jogo != "jogando":
                     salvar_progresso_final(estado_jogo)
-                    caminho_video = f"assets\\videos\\finals\\{estado_jogo}"
-                    tocar_video(caminho_video, tela)
+                    caminho_video = f"assets\\videos\\finals\\{estado_jogo}.mp4"
+                    caminho_audio = f"assets\\sounds\\finals_reformulado\\{estado_jogo}.mp3"
+                    tocar_video(caminho_video, tela, caminho_audio)
                     
                     if menu(tela):
                         pass

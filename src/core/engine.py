@@ -82,10 +82,10 @@ class Engine:
         if self.status['AP_DIR'] >= 1000: return "f06_punho_ferro"
         
         #f07_guerra_civil
-        if self.status['DIP'] <= 0: return "final_diplomacia_0"
+        if self.status['DIP'] <= 0: return "f07_guerra_civil"
         
         #f08_estadista_centro
-        if self.status['CON'] >= 1000: return "f14_cong_1000"
+        if self.status['CON'] >= 1000: return "f08_estadista_centro"
 
         #f09_populista_carismatico
         if self.status['POP'] >= 1000: return "f09_populista_carismatico"
@@ -101,9 +101,9 @@ class Engine:
         
         #finais inacabados
         if self.status['FOR'] >=1000: return "f13_forca_1000"
-        if self.status['JUD'] >= 1000: return "f15_jud_1000"
-        if self.status['AP_ESQ'] <= 0: return "f16_esquerda_0"
-        if self.status['AP_DIR'] <= 0: return "f17_direita_0"
+        if self.status['JUD'] >= 1000: return "f14_jud_1000"
+        if self.status['AP_ESQ'] <= 0: return "f15_esquerda_0"
+        if self.status['AP_DIR'] <= 0: return "f16_direita_0"
         
         if len(self.eventos) > 0:
             return "jogando"
