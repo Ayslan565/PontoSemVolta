@@ -73,6 +73,11 @@ def menu(tela):
                 pygame.quit()
                 sys.exit()
             
+            # ADICIONE ESTA PARTE NO SEU MENU:
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_F11:
+                    pygame.display.toggle_fullscreen()
+            
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_UP:
                     selecionado = (selecionado - 1) % len(opcoes)

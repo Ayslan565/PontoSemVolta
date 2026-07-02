@@ -1,4 +1,5 @@
 import pygame
+import sys
 from src.ui.design import *
 
 animacao = {'nao': 0.0, 'sim': 0.0}
@@ -14,120 +15,220 @@ def criar_elementos(tela, img_nao, img_sim, img_papel, texto_pergunta):
     global animacao
     suavidade = 0.15
     crescimento = 20
-
     mouse_olha = pygame.mouse.get_pos()
     largura, altura = tela.get_size()
-
     largura_papel = 600
     altura_papel = 120
     x_papel = (largura // 2) - (largura_papel // 2)
-    y_papel = 20 
+    y_papel = 20      
     
     img_papel_ajustada = pygame.transform.smoothscale(img_papel, (largura_papel, altura_papel))
     tela.blit(img_papel_ajustada, (x_papel, y_papel))
     
     cor_texto_pergunta = (93, 49, 36)
-    fonte_pergunta = pygame.font.SysFont('Stencil', 22) 
-    
+    fonte_pergunta = pygame.font.SysFont('timesnewroman', 26, bold=True)      
     super_texto = fonte_pergunta.render(texto_pergunta, True, cor_texto_pergunta)
-    rect_papel = pygame.Rect(x_papel, y_papel, largura_papel, altura_papel) 
-    tela.blit(super_texto, super_texto.get_rect(center=rect_papel.center)) 
+    rect_papel = pygame.Rect(x_papel, y_papel, largura_papel, altura_papel)
+    tela.blit(super_texto, super_texto.get_rect(center=rect_papel.center))      
     
     largura_base = 250 
     altura_base = 150
     margem = 50
-    espaco_entre_botoes = 50 
-    
+    espaco_entre_botoes = 50      
     y_botoes = altura - altura_base - margem 
     x_nao = (largura // 2) - (espaco_entre_botoes // 2) - largura_base 
-    x_sim = (largura // 2) + (espaco_entre_botoes // 2) 
+    x_sim = (largura // 2) + (espaco_entre_botoes // 2)      
     
     escNao = pygame.Rect(x_nao, y_botoes, largura_base, altura_base)
     escSim = pygame.Rect(x_sim, y_botoes, largura_base, altura_base)
-
+    
     if escNao.collidepoint(mouse_olha):
         animacao['nao'] += (crescimento - animacao['nao']) * suavidade
     else:
         animacao['nao'] += (0 - animacao['nao']) * suavidade
-
+        
     tam_nao = (int(largura_base + animacao['nao']), int(altura_base + animacao['nao']))
     img_nao_final = arredondar_img(img_nao, tam_nao, 15)
     tela.blit(img_nao_final, (x_nao - (animacao['nao']/2), y_botoes - (animacao['nao']/2)))
-
+    
     if escSim.collidepoint(mouse_olha):
         animacao['sim'] += (crescimento - animacao['sim']) * suavidade
     else:
         animacao['sim'] += (0 - animacao['sim']) * suavidade
-
+        
     tam_sim = (int(largura_base + animacao['sim']), int(altura_base + animacao['sim']))
     img_sim_final = arredondar_img(img_sim, tam_sim, 15)
     tela.blit(img_sim_final, (x_sim - (animacao['sim']/2), y_botoes - (animacao['sim']/2)))
-
+    
     return escNao, escSim
 
-def desenhar_painel_status(tela, status_dit, mostrar_status=True):
-    largura_tela, altura_tela = tela.get_size()
+def quebrar_texto(texto, fonte, largura_maxima):
+    palavras = texto.split(' ')
+    linhas = []
+    linha_atual = ""
     
-    BotaoStatus = pygame.Rect(largura_tela - 70, 20, 50, 50) 
-    pygame.draw.rect(tela, (50, 50, 50), BotaoStatus, border_radius=15) 
-    pygame.draw.rect(tela, (255, 255, 255), BotaoStatus, border_radius=15, width=2) 
+    for palavra in palavras:
+        teste_linha = linha_atual + palavra + " "
+        if fonte.size(teste_linha)[0] < largura_maxima:
+            linha_atual = teste_linha
+        else:
+            linhas.append(linha_atual)
+            linha_atual = palavra + " "
+    
+    if linha_atual:
+        linhas.append(linha_atual)
+        
+    return linhas
 
-    fonte_icone = pygame.font.SysFont('Times New Roman', 24, bold=True)
-    txt_icone = fonte_icone.render('i', True, (255, 255, 255))
-    tela.blit(txt_icone, txt_icone.get_rect(center=BotaoStatus.center)) 
+def exibir_relatorio_mensal(tela, img_fundo, img_papel, texto_historia, status_dit, mes_numero):
+    largura_tela, altura_tela = tela.get_size()
+    relogio = pygame.time.Clock()
     
-    if mostrar_status:
-        larg_painel = 420 
-        alt_painel = 320  
-        x_painel = largura_tela - larg_painel - 20 
-        y_painel = 80 
+    fundo_ajustado = pygame.transform.scale(img_fundo, (largura_tela, altura_tela))
+    
+    larg_papel = 850 
+    alt_papel = 500  
+    x_papel = (largura_tela // 2) - (larg_papel // 2)
+    y_papel = (altura_tela // 2) - (alt_papel // 2)
+    papel_ajustado = pygame.transform.smoothscale(img_papel, (larg_papel, alt_papel))
+
+    fonte_titulo = pygame.font.SysFont('timesnewroman', 24, bold=True)
+    fonte_historia = pygame.font.SysFont('timesnewroman', 18, bold=False)
+    fonte_labels = pygame.font.SysFont('timesnewroman', 15, bold=True)
+    
+    linhas_completas = quebrar_texto(texto_historia, fonte_historia, 400)
+    
+    indice_letra = 0
+    total_letras = len(texto_historia)
+    animacao_concluida = False
+    rodando = True
+    
+    tempo_ultima_letra = pygame.time.get_ticks()
+    velocidade_digito = 30 
+    
+    atributos = [
+        ('POP', 'Popularidade', (40, 110, 40)),   
+        ('TES', 'Tesouro', (150, 120, 30)),       
+        ('FOR', 'Forças Armadas', (120, 40, 40)), 
+        ('CON', 'Congresso', (40, 70, 120)),      
+        ('JUD', 'Judiciário', (100, 100, 100)),   
+        ('DIP', 'Diplomacia', (100, 50, 100)),    
+        ('AP_ESQ', 'Esquerda', (140, 50, 50)),    
+        ('AP_DIR', 'Direita', (50, 60, 130))      
+    ]
+    
+    # ---------------------------------------------------------
+    # VARIÁVEL DE CONTROLE DA ANIMAÇÃO DAS BARRAS
+    # ---------------------------------------------------------
+    valores_animados = {chave: 0.0 for chave, _, _ in atributos}
+    suavidade_barras = 0.05
+    
+    while rodando:
+        tempo_atual = pygame.time.get_ticks()
         
-        pygame.draw.rect(tela, (25, 25, 25), (x_painel, y_painel, larg_painel, alt_painel), border_radius=15)
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_F11:
+                    pygame.display.toggle_fullscreen()
+                elif event.key == pygame.K_RETURN:
+                    if not animacao_concluida:
+                        indice_letra = total_letras
+                        animacao_concluida = True
+                        # Ao pular a animação, preenche as barras imediatamente
+                        for chave in valores_animados:
+                            valores_animados[chave] = float(status_dit.get(chave, 50))
+                    else:
+                        rodando = False
+
+        if not animacao_concluida and tempo_atual - tempo_ultima_letra > velocidade_digito:
+            if indice_letra < total_letras:
+                indice_letra += 1
+                tempo_ultima_letra = tempo_atual
+            else:
+                animacao_concluida = True
+
+        # Inicia a animação de preenchimento quando um terço do texto já foi digitado
+        if indice_letra > total_letras // 3:
+            for chave, _, _ in atributos:
+                alvo = status_dit.get(chave, 50)
+                valores_animados[chave] += (alvo - valores_animados[chave]) * suavidade_barras
+
+        tela.blit(fundo_ajustado, (0, 0))
+        tela.blit(papel_ajustado, (x_papel, y_papel))
         
+        titulo = f"PROTOCOLO: RELATÓRIO DE SOBREVIVÊNCIA - MÊS {mes_numero}"
+        txt_titulo = fonte_titulo.render(titulo, True, (100, 30, 30)) 
+        tela.blit(txt_titulo, (x_papel + 50, y_papel + 50))
         
-        fonte_titulo = pygame.font.SysFont('Times New Roman', 26)
-        txt_titulo = fonte_titulo.render('INFORMAÇÕES', True, (255, 255, 255))
-        centro_x_painel = x_painel + (larg_painel // 2)
-        rect_titulo = txt_titulo.get_rect(centerx=centro_x_painel, top=y_painel + 15)
-        tela.blit(txt_titulo, rect_titulo)
+        letras_desenhadas = 0
+        y_linha = y_papel + 110
         
-        atributos = [
-            ('POP', 'Popularidade', (50, 200, 50)),
-            ('TES', 'Tesouro', (220, 180, 50)),
-            ('FOR', 'Forças Armadas', (200, 50, 50)),
-            ('CON', 'Congresso', (50, 100, 200)),
-            ('JUD', 'Judiciário', (200, 200, 200)),
-            ('DIP', 'Diplomacia', (180, 100, 200)),
-            ('AP_ESQ', 'Esquerda', (220, 60, 60)),
-            ('AP_DIR', 'Direita', (60, 80, 220))
-        ]
-        
-        fonte_labels = pygame.font.SysFont('Times New Roman', 16, bold=True)
-        
-        y_inicial = y_painel + 60
-        y_atual = y_inicial
-        x_coluna = x_painel + 20
+        for linha in linhas_completas:
+            tamanho_linha = len(linha)
+            
+            if letras_desenhadas + tamanho_linha <= indice_letra:
+                texto_para_renderizar = linha
+                letras_desenhadas += tamanho_linha
+            else:
+                letras_restantes = indice_letra - letras_desenhadas
+                if letras_restantes > 0:
+                    texto_para_renderizar = linha[:letras_restantes]
+                    letras_desenhadas += letras_restantes
+                else:
+                    texto_para_renderizar = ""
+            
+            if texto_para_renderizar:
+                img_texto = fonte_historia.render(texto_para_renderizar, True, (30, 30, 30))
+                tela.blit(img_texto, (x_papel + 50, y_linha))
+                
+            y_linha += (fonte_historia.get_linesize() + 3)
+            
+        x_status = x_papel + 520
+        y_inicial_status = y_papel + 110
+        largura_barra_max = 240 
+        altura_barra = 14
+        tamanho_ponta = 10 
         
         for i, (chave, nome, cor) in enumerate(atributos):
-            valor = status_dit.get(chave, 50)
+            valor_atual = valores_animados[chave]
+            y_atual = y_inicial_status + (i * 42)
             
-            if i == 4:
-                x_coluna = x_painel + 220 
-                y_atual = y_inicial       
+            txt_label = fonte_labels.render(nome, True, (40, 40, 40))
+            tela.blit(txt_label, (x_status, y_atual - 15))
+            
+            x_fim_fundo = x_status + largura_barra_max
+            pontos_fundo = [
+                (x_status, y_atual + 5), 
+                (x_fim_fundo, y_atual + 5), 
+                (x_fim_fundo + tamanho_ponta, y_atual + 5 + (altura_barra / 2)), 
+                (x_fim_fundo, y_atual + 5 + altura_barra),
+                (x_status, y_atual + 5 + altura_barra)
+            ]
+            pygame.draw.polygon(tela, (160, 160, 160), pontos_fundo) 
+            
+            # ---------------------------------------------------------
+            # DESENHO DA BARRA ANIMADA
+            # ---------------------------------------------------------
+            if valor_atual > 0.5: # Evita desenhar se for menor que meio pixel
+                largura_preenchida = (valor_atual / 1000) * largura_barra_max
+                x_fim_preenchido = x_status + largura_preenchida
                 
-            txt = fonte_labels.render(nome, True, (180, 180, 180))
-            tela.blit(txt, (x_coluna, y_atual))
-            
-            largura_barra_max = 170 
-            altura_barra = 15
-            
-            pygame.draw.rect(tela, (60, 60, 60), (x_coluna, y_atual + 20, largura_barra_max, altura_barra), border_radius=5)
-            
-            largura_preenchida = (valor / 1000) * largura_barra_max 
-            
-            if largura_preenchida > 0: 
-                pygame.draw.rect(tela, cor, (x_coluna, y_atual + 20, int(largura_preenchida), altura_barra), border_radius=5)
-                
-            y_atual += 60 
-            
-    return BotaoStatus
+                pontos_preenchidos = [
+                    (x_status, y_atual + 5), 
+                    (x_fim_preenchido, y_atual + 5), 
+                    (x_fim_preenchido + tamanho_ponta, y_atual + 5 + (altura_barra / 2)), 
+                    (x_fim_preenchido, y_atual + 5 + altura_barra),
+                    (x_status, y_atual + 5 + altura_barra)
+                ]
+                pygame.draw.polygon(tela, cor, pontos_preenchidos)
+
+        if animacao_concluida:
+            if (tempo_atual // 500) % 2 == 0: 
+                txt_rodape = fonte_labels.render("[ PRESSIONE ENTER PARA ARQUIVAR ]", True, (50, 50, 50))
+                tela.blit(txt_rodape, (x_papel + 280, y_papel + alt_papel - 40))
+
+        pygame.display.flip()
+        relogio.tick(60)
