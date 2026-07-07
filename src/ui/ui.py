@@ -12,7 +12,6 @@ animacao = {
 }
 
 def fazer_fade_out(tela, velocidade=10, cor=(0, 0, 0)):
-    """Escurece a tela gradualmente antes de mudar de cena."""
     largura, altura = tela.get_size()
     fade_surface = pygame.Surface((largura, altura))
     fade_surface.fill(cor)
@@ -28,6 +27,19 @@ def arredondar_img(imagem, tamanho, raio):
     pygame.draw.rect(mascara, (255, 255, 255, 255), (0, 0, *tamanho), border_radius=raio)
     imgRedimensionada.blit(mascara, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
     return imgRedimensionada
+
+def desenhar_botao_opcoes(tela, img_pause):
+    largura, altura = tela.get_size()
+    
+    # Define o tamanho do ícone na tela
+    tamanho_icone = 40
+    img_redimensionada = pygame.transform.smoothscale(img_pause, (tamanho_icone, tamanho_icone))
+    
+    # Posiciona no canto superior direito
+    rect = img_redimensionada.get_rect(topright=(largura - 20, 20))
+    tela.blit(img_redimensionada, rect)
+    
+    return rect
 
 def criar_elementos(tela, img_nao, img_sim, img_papel, texto_pergunta, som_entrada=None, som_saida=None):
     global animacao
@@ -173,7 +185,6 @@ def exibir_relatorio_mensal(tela, img_fundo, img_papel, texto_historia, status_d
     valores_animados = {chave: 0.0 for chave, _, _ in atributos}
     suavidade_barras = 0.05
     
-    # --- VARIÁVEIS DE CONTROLE DO FADE ---
     alpha_fade_in = 255
     alpha_fade_out = 0
     saindo = False
@@ -197,7 +208,6 @@ def exibir_relatorio_mensal(tela, img_fundo, img_papel, texto_historia, status_d
                         for chave in valores_animados:
                             valores_animados[chave] = float(status_dit.get(chave, 50))
                     else:
-                        # Em vez de fechar direto, ativa o gatilho de Fade Out
                         saindo = True
 
         if not animacao_concluida and tempo_atual - tempo_ultima_letra > velocidade_digito:
@@ -279,7 +289,6 @@ def exibir_relatorio_mensal(tela, img_fundo, img_papel, texto_historia, status_d
                 txt_rodape = fonte_labels.render("[ PRESSIONE ENTER PARA ARQUIVAR ]", True, (50, 50, 50))
                 tela.blit(txt_rodape, (x_papel + 280, y_papel + alt_papel - 40))
 
-        # --- APLICA OS FADES ---
         if alpha_fade_in > 0:
             alpha_fade_in -= 2
             if alpha_fade_in < 0: alpha_fade_in = 0
@@ -292,7 +301,7 @@ def exibir_relatorio_mensal(tela, img_fundo, img_papel, texto_historia, status_d
             superficie_fade.set_alpha(alpha_fade_out)
             tela.blit(superficie_fade, (0, 0))
             if alpha_fade_out == 255:
-                rodando = False # Agora sim encerra a tela de relatorio
+                rodando = False
 
         pygame.display.flip()
         relogio.tick(60)
